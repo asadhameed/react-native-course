@@ -1,6 +1,8 @@
 # working with Content and List Building
 
-This exercise helps to understand the concept of React Native. How react-native can run in mobile and emulator. Key concepts:- Flat list, components, NavigationContainer, createStackNavigator,
+This exercise helps to understand the concept of React Native.
+How can Navigating Users Between Screens ?
+TouchableOpacity and Button concept
 
 ## Available Scripts
 
