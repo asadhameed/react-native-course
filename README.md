@@ -10,6 +10,8 @@
 
 ### 01 navigationBetweenScreen (Navigating Users Between Screens)
 
+### 02 componentsReusable (Building Reusable Components)
+
 ## Main Scripts
 
 ### `expo init mobile_app`
