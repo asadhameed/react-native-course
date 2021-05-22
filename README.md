@@ -12,6 +12,8 @@
 
 ### 02 componentsReusable (Building Reusable Components)
 
+### 03 stateManagement (State Management in React Components)
+
 ## Main Scripts
 
 ### `expo init mobile_app`
