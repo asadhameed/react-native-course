@@ -14,6 +14,8 @@
 
 ### 03 stateManagement (State Management in React Components)
 
+### 04 RestaurantSearchApp (Putting It All Togethe, Using Outside API's,Making Hooks Reusable,Navigation with Parameters)
+
 ## Main Scripts
 
 ### `expo init mobile_app`
