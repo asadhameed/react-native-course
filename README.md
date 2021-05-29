@@ -14,9 +14,11 @@
 
 ### 03 stateManagement (State Management in React Components)
 
-### 04 RestaurantSearchApp (Advanced State Management with Contexts)
+### 04 RestaurantSearchApp (Putting It All Together, Using Outside API's,Making Hooks Reusable,Navigation with Parameters)
 
-### 05 StateManagementContext ()
+### 05 StateManagementContext ( Advanced State Management with Context)
+
+### 05 StateManagementContext-jsonserver (Data API Sync)
 
 ## Main Scripts
 
