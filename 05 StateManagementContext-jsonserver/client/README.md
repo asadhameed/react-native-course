@@ -22,7 +22,7 @@ Create a react-native project.
 
 React Navigation is made up of some core utilities and those are then used by navigators to create the navigation structure in your app.
 
-More help [React Navigation] (https://reactnavigation.org/docs/getting-started)
+More help [React Navigation](https://reactnavigation.org/docs/getting-started)
 
 ### `npm start`
 

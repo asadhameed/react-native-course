@@ -10,7 +10,7 @@ In the project directory, you can run the following Dependencies:
 
 ### `npm init -y`
 
-### `npm install --save bcrypt express jsonwebtoken mongoose nodemon`
+### `npm install --save bcrypt express jsonwebtoken mongoose nodemon ngrok`
 
 ### `npm run dev`
 

@@ -16,4 +16,4 @@ This script will run the json-server
 
 ### `npm run tunnel`
 
-this script will run tunnel for us
+this script will run tunnel in ngrok
