@@ -8,6 +8,7 @@ This exercise helps to understand the following concept
 - 4. When a navigation is come on front then clear a error Message. Use navigation.addListener('focus')
 - 5. When the user signin/signup then information store in local storage(AuthContext.js). If the signin screen is the initialrouterName. The signin screen load for millisecond which user can see. To solve this problem we make empty component(ResolveAuthScreen.js)
 - 6. Inside in the ResolveAuthScreen is pass a callback function to redirect the signin screen (ResolveAuthScreen.js see useEffect function)
+- 7. How can use SafeAreaView in the component (SafeAreaComponent.js is use in AccountScreen.js and TrackCreateScreen.js)
 
 ## Available Scripts
 
@@ -36,6 +37,11 @@ More help [React Native Elements](https://reactnativeelements.com/docs)
 
 Async Storage is asynchronous, unencrypted, persistent, key-value storage solution for your React Native application. Data storage solution for Android, iOS, Web, MacOS and Windows.
 More help [Data storage system for React Native](https://react-native-async-storage.github.io/async-storage/)
+
+### 6 `npm install react-native-safe-area-context`
+
+By default, React Navigation tries to ensure that the elements of the navigators display correctly on devices with notches (e.g. iPhone X) and UI elements which may overlap the app content.
+More help [Data storage system for React Native](https://reactnavigation.org/docs/handling-safe-area/)
 
 ### `npm start`
 

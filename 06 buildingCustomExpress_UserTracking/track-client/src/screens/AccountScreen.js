@@ -1,24 +1,22 @@
 import React, { useContext } from "react";
-import { View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { Button, Text } from "react-native-elements";
+
+import SafeAreaComponent from "../components/SafeAreaComponent";
 import { Context as AuthContext } from "../contexts/AuthContext";
+
 const AccountScreen = () => {
   const { signOut } = useContext(AuthContext);
   return (
-    <View style={styles.container}>
+    <SafeAreaComponent>
       <Text h3 style={{ marginBottom: 30 }}>
         Account Setting
       </Text>
       <Button title="Sign Out" onPress={signOut} />
-    </View>
+    </SafeAreaComponent>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 100,
-    marginHorizontal: 30,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default AccountScreen;

@@ -1,11 +1,12 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
+import SafeAreaComponent from "../components/SafeAreaComponent";
 const TrackCreateScreen = () => {
   return (
-    <View>
+    <SafeAreaComponent>
       <Text> Track Create Screen</Text>
-    </View>
+    </SafeAreaComponent>
   );
 };
 
