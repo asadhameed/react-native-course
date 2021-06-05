@@ -6,6 +6,7 @@ This exercise helps to understand the following concept
 - 2. Create AuthFormComponent which can use SignIn and SignUp both pages
 - 3. Generic type of Context create (createDataContext.js)
 - 4. When a navigation is come on front then clear a error Message. Use navigation.addListener('focus')
+- 5. When the user signin/signup then information store in local storage(AuthContext.js). If the signin screen is the initialrouterName. The signin screen load for millisecond which user can see. To solve this problem we make empty component(ResolveAuthScreen.js)
 
 ## Available Scripts
 

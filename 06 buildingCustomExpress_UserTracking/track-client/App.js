@@ -13,6 +13,7 @@ import {
   Provider as AuthProvider,
   Context as AuthContext,
 } from "./src/contexts/AuthContext";
+import ResolveAuthScreen from "./src/screens/ResolveAuthScreen";
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 function TrackStackScreen() {
@@ -34,7 +35,12 @@ function TrackStackScreen() {
 
 function SignInSignUpStackScreens() {
   return (
-    <Stack.Navigator initialRouteName="signIn">
+    <Stack.Navigator initialRouteName="resolveAuthScreen">
+      <Stack.Screen
+        name="resolveAuthScreen"
+        component={ResolveAuthScreen}
+        options={{ title: "" }}
+      />
       <Stack.Screen
         name="signIn"
         component={SignIn}
@@ -73,7 +79,11 @@ const App = () => {
     <NavigationContainer>
       {authContext.state.token ? (
         <Stack.Navigator>
-          <Stack.Screen name="mainTab" component={TrackBottomTab} />
+          <Stack.Screen
+            name="mainTab"
+            component={TrackBottomTab}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       ) : (
         <SignInSignUpStackScreens />
