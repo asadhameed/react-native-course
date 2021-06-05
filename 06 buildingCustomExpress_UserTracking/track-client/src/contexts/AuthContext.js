@@ -7,12 +7,15 @@ const authReducer = (state, action) => {
       return { errorMessage: "", token: action.payload };
     case "error_message":
       return { ...state, errorMessage: action.payload };
+    case "signout":
+      return { errorMessage: "", token: null };
     default:
       return state;
   }
 };
-const tryLocalSignin = (dispatch) => async () => {
+const tryLocalSignin = (dispatch) => async (callBack) => {
   const token = await AsyncStorage.getItem("token");
+  callBack();
   if (token) {
     dispatch({ type: "signin", payload: token });
   }
@@ -26,7 +29,6 @@ const signUp =
     try {
       const response = await TrackAPI.post("/signup", { email, password });
       await AsyncStorage.setItem("token", response.data.token);
-      console.log(response.data);
       dispatch({ type: "signin", payload: response.data.token });
     } catch (error) {
       dispatch({
@@ -51,8 +53,17 @@ const signIn =
     }
   };
 
-const signOut = (dispatch) => {
-  return () => {};
+const signOut = (dispatch) => async () => {
+  try {
+    await AsyncStorage.removeItem("token");
+
+    dispatch({ type: "signout" });
+  } catch (error) {
+    dispatch({
+      type: "error_message",
+      payload: "Something wrong with Sign Out",
+    });
+  }
 };
 
 export const { Provider, Context } = createDataContext(

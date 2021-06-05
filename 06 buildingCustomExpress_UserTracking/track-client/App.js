@@ -44,12 +44,12 @@ function SignInSignUpStackScreens() {
       <Stack.Screen
         name="signIn"
         component={SignIn}
-        options={{ title: "Sign In", headerShown: false }}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="signUp"
         component={SignUp}
-        options={{ title: "Sign Up", headerShown: false }}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
@@ -73,11 +73,10 @@ function TrackBottomTab() {
 }
 
 const App = () => {
-  const authContext = useContext(AuthContext);
-  console.log(authContext);
+  const { state } = useContext(AuthContext);
   return (
     <NavigationContainer>
-      {authContext.state.token ? (
+      {state.token ? (
         <Stack.Navigator>
           <Stack.Screen
             name="mainTab"
