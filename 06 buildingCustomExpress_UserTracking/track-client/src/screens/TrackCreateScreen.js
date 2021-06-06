@@ -1,9 +1,12 @@
+import "../test/_mockLocation";
 import React, { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import {
   requestForegroundPermissionsAsync,
   getCurrentPositionAsync,
+  watchPositionAsync,
+  Accuracy,
 } from "expo-location";
 
 import SafeAreaComponent from "../components/SafeAreaComponent";
@@ -31,9 +34,22 @@ const TrackCreateScreen = () => {
     }
     setPermissionInfo(null);
     let location = await getCurrentPositionAsync({});
-    setLongitude(location.coords.longitude);
-    setLatitude(location.coords.latitude);
-    console.log(location);
+    // setLongitude(location.coords.longitude);
+    // setLatitude(location.coords.latitude);
+    try {
+      await watchPositionAsync(
+        {
+          accuracy: Accuracy.BestForNavigation,
+          timeInterval: 1000,
+          distanceInterval: 10,
+        },
+        (location) => {
+          console.log(location);
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
