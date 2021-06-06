@@ -48,7 +48,15 @@ More help [Data storage system for React Native](https://reactnavigation.org/doc
 ### 7 `expo install react-native-maps`
 
 react-native-maps provides a Map component that uses Apple Maps or Google Maps on iOS and Google Maps on Android. Expo uses react-native-maps at react-community/react-native-maps.
-More help [Data storage system for React Native](https://docs.expo.io/versions/latest/sdk/map-view/)
+More help [Data storage system for React Native](https://docs.expo.io/versions/latest/sdk/map-view/) <br />
+
+<strong>Resetting Permissions for Testing Android Emulator </strong> `adb shell pm reset-permissions ` <br />
+
+<strong>Resetting Permissions for Testing Android Device </strong> Different based on Android version. Google it <br />
+
+<strong>Resetting Permissions for Testing iOs Simulator </strong> 'Settings >general > Reset > Reset Location and Privacy. <br />
+
+<strong>Resetting Permissions for Testing iOs Device </strong> 'Settings >Expo > Toggle permissions (note this doesn't actually 'reset) <br />
 
 ### `npm start`
 

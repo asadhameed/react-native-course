@@ -1,20 +1,26 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
-const MapComponent = () => {
+const MapComponent = (props) => {
   const fakeLocation = [];
   for (let i = 0; i < 10; i++) {
     fakeLocation.push({
-      latitude: 34.02815 + i * 0.0002,
-      longitude: 71.630595 + i * 0.0003,
+      latitude: props.latitude + i * 0.0002,
+      longitude: props.longitude + i * 0.0003,
     });
   }
   return (
     <MapView
       style={styles.mapStyle}
       initialRegion={{
-        latitude: 34.02815,
-        longitude: 71.630595,
+        latitude: props.latitude,
+        longitude: props.longitude,
+        latitudeDelta: 0.001,
+        longitudeDelta: 0.001,
+      }}
+      region={{
+        latitude: props.latitude,
+        longitude: props.longitude,
         latitudeDelta: 0.001,
         longitudeDelta: 0.001,
       }}
@@ -26,6 +32,8 @@ const MapComponent = () => {
 
 const styles = StyleSheet.create({
   mapStyle: {
+    borderWidth: 1,
+    borderColor: "black",
     height: 300,
     margin: 20,
   },
