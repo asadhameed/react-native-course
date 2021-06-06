@@ -43,6 +43,13 @@ More help [Data storage system for React Native](https://react-native-async-stor
 By default, React Navigation tries to ensure that the elements of the navigators display correctly on devices with notches (e.g. iPhone X) and UI elements which may overlap the app content.
 More help [Data storage system for React Native](https://reactnavigation.org/docs/handling-safe-area/)
 
+### 7 `npm install react-native-maps --save-exact`
+
+### 7 `expo install react-native-maps`
+
+react-native-maps provides a Map component that uses Apple Maps or Google Maps on iOS and Google Maps on Android. Expo uses react-native-maps at react-community/react-native-maps.
+More help [Data storage system for React Native](https://docs.expo.io/versions/latest/sdk/map-view/)
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
