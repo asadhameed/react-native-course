@@ -1,7 +1,7 @@
 import "../test/_mockLocation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { StyleSheet } from "react-native";
-import { Text } from "react-native-elements";
+import { Text, Button } from "react-native-elements";
 import {
   requestForegroundPermissionsAsync,
   getCurrentPositionAsync,
@@ -11,6 +11,8 @@ import {
 
 import SafeAreaComponent from "../components/SafeAreaComponent";
 import MapComponent from "../components/MapComponent";
+
+import { Context as LocationContext } from "../contexts/LocationContext";
 
 const serviceMessage = (message) => {
   return (
@@ -23,7 +25,8 @@ const TrackCreateScreen = () => {
   const [longitude, setLongitude] = useState(17.641273468132997);
   const [latitude, setLatitude] = useState(59.86286634717817);
   const [permissionInfo, setPermissionInfo] = useState(null);
-
+  const context = useContext(LocationContext);
+  console.log(context.state);
   const startWatchingLocation = async () => {
     const request = await requestForegroundPermissionsAsync();
     const { status, canAskAgain } = request;
@@ -44,7 +47,7 @@ const TrackCreateScreen = () => {
           distanceInterval: 10,
         },
         (location) => {
-          console.log(location);
+          context.addLocation(location);
         }
       );
     } catch (error) {
@@ -56,11 +59,22 @@ const TrackCreateScreen = () => {
     startWatchingLocation();
   }, []);
 
+  const onPressButton = () => {
+    console.log(context.state.isRecording);
+    return context.state.isRecording
+      ? context.stopRecording()
+      : context.startRecording();
+  };
+
   return (
     <SafeAreaComponent>
       <Text h3> Create A Track</Text>
       <MapComponent longitude={longitude} latitude={latitude} />
       {permissionInfo ? serviceMessage(permissionInfo) : null}
+      <Button
+        title={context.state.isRecording ? "Stop Recording" : "Start Recording"}
+        onPress={onPressButton}
+      ></Button>
     </SafeAreaComponent>
   );
 };

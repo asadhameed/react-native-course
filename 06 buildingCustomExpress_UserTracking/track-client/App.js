@@ -9,11 +9,13 @@ import AccountScreen from "./src/screens/AccountScreen";
 import TrackCreateScreen from "./src/screens/TrackCreateScreen";
 import TrackListScreen from "./src/screens/TrackListScreen";
 import TrackDetailScreen from "./src/screens/TrackDetailScreen";
+import ResolveAuthScreen from "./src/screens/ResolveAuthScreen";
+
 import {
   Provider as AuthProvider,
   Context as AuthContext,
 } from "./src/contexts/AuthContext";
-import ResolveAuthScreen from "./src/screens/ResolveAuthScreen";
+import { Provider as LocationProvider } from "./src/contexts/LocationContext";
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 function TrackStackScreen() {
@@ -93,7 +95,9 @@ const App = () => {
 export default () => {
   return (
     <AuthProvider>
-      <App />
+      <LocationProvider>
+        <App />
+      </LocationProvider>
     </AuthProvider>
   );
 };

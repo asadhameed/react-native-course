@@ -9,6 +9,7 @@ This exercise helps to understand the following concept
 - 5. When the user signin/signup then information store in local storage(AuthContext.js). If the signin screen is the initialrouterName. The signin screen load for millisecond which user can see. To solve this problem we make empty component(ResolveAuthScreen.js)
 - 6. Inside in the ResolveAuthScreen is pass a callback function to redirect the signin screen (ResolveAuthScreen.js see useEffect function)
 - 7. How can use SafeAreaView in the component (SafeAreaComponent.js is use in AccountScreen.js and TrackCreateScreen.js)
+- 8. Import/export is function then use export default, if return object then should write export const {variable1} (LocationContext.js)
 
 ## Available Scripts
 
