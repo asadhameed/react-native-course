@@ -22,11 +22,9 @@ const serviceMessage = (message) => {
   );
 };
 const TrackCreateScreen = () => {
-  const [longitude, setLongitude] = useState(17.641273468132997);
-  const [latitude, setLatitude] = useState(59.86286634717817);
   const [permissionInfo, setPermissionInfo] = useState(null);
   const context = useContext(LocationContext);
-  console.log(context.state);
+
   const startWatchingLocation = async () => {
     const request = await requestForegroundPermissionsAsync();
     const { status, canAskAgain } = request;
@@ -37,8 +35,8 @@ const TrackCreateScreen = () => {
     }
     setPermissionInfo(null);
     let location = await getCurrentPositionAsync({});
-    // setLongitude(location.coords.longitude);
-    // setLatitude(location.coords.latitude);
+    console.log("long", location.coords.longitude);
+    console.log("lat", location.coords.latitude);
     try {
       await watchPositionAsync(
         {
@@ -48,6 +46,12 @@ const TrackCreateScreen = () => {
         },
         (location) => {
           context.addLocation(location);
+          const coordinate = {
+            longitude: location.coords.longitude,
+            latitude: location.coords.latitude,
+          };
+          //  console.log(coordinate);
+          context.saveTrack(coordinate);
         }
       );
     } catch (error) {
@@ -60,7 +64,6 @@ const TrackCreateScreen = () => {
   }, []);
 
   const onPressButton = () => {
-    console.log(context.state.isRecording);
     return context.state.isRecording
       ? context.stopRecording()
       : context.startRecording();
@@ -69,7 +72,7 @@ const TrackCreateScreen = () => {
   return (
     <SafeAreaComponent>
       <Text h3> Create A Track</Text>
-      <MapComponent longitude={longitude} latitude={latitude} />
+      <MapComponent />
       {permissionInfo ? serviceMessage(permissionInfo) : null}
       <Button
         title={context.state.isRecording ? "Stop Recording" : "Start Recording"}
