@@ -46,7 +46,7 @@ export default (shouldTrack, callBack) => {
       if (subscription) subscription.remove();
       setSubscription(null);
     }
-  }, [shouldTrack]);
+  }, [shouldTrack, callBack]);
 
   return [permissionInfo];
 };

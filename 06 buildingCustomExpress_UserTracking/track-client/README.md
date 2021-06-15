@@ -12,6 +12,7 @@ This exercise helps to understand the following concept
 - 8. Import/export is function then use export default, if return object then should write export const {variable1} (LocationContext.js)
 - 9. When user click on create A task then start recording the current location and if the user move to other pages then stop the recording (TrackCreateScreen.js) use navigation.isFocused() or useIsFocused hook from @react-navigation/native.
 - 10. setInterval is not working properly in react native application therefore i increase time (test/\_mockLocation.js)
+- 11. When callback is change Value inside in useEffect then it's not change the value (TrackCreateScreen.js comments area). So use the useCallback hooks from react. (Buggy UseEffects, Understanding Stale References, Kind of Fixed)
 
 ## Available Scripts
 

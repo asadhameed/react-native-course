@@ -1,5 +1,5 @@
 import "../test/_mockLocation";
-import React, { useContext } from "react";
+import React, { useContext, useCallback } from "react";
 import { StyleSheet } from "react-native";
 import { Text, Button } from "react-native-elements";
 import { useIsFocused } from "@react-navigation/native";
@@ -21,14 +21,25 @@ const serviceMessage = (message) => {
 const TrackCreateScreen = ({ navigation }) => {
   const { addLocation, state } = useContext(LocationContext);
   // you can use useIsFocused() hooked or use navigation.isFocused() so both are working
-  const isFocused = useIsFocused();
-  console.log("-------state.is-------", state.isRecording);
-  const [permissionInfo] = hookUseLocation(
-    navigation.isFocused(),
+  // const isFocused = useIsFocused();
+  // console.log("-------state.is-------", state.isRecording);
+  // const [permissionInfo] = hookUseLocation(
+  //   navigation.isFocused(),
+  //   (location) => {
+  //     addLocation(location, state.isRecording);
+  //   }
+  // );
+
+  // console.log("-------outside in callback-------", state.isRecording);
+  const callBack = useCallback(
     (location) => {
+      // console.log("-------inside in callback-------", state.isRecording);
       addLocation(location, state.isRecording);
-    }
+    },
+    [state.isRecording]
   );
+
+  const [permissionInfo] = hookUseLocation(navigation.isFocused(), callBack);
 
   return (
     <SafeAreaComponent>
