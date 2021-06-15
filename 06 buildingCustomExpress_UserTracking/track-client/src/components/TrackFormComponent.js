@@ -4,11 +4,11 @@ import { Button, Input } from "react-native-elements";
 import Spacer from "./Spacer";
 
 import { Context as LocationContext } from "../contexts/LocationContext";
-
+import useSaveTrack from "../hooks/useSaveTrack";
 const TrackFromComponent = () => {
   const { state, stopRecording, startRecording, changeName } =
     useContext(LocationContext);
-  console.log(state.locations.length);
+  const [saveTrack] = useSaveTrack();
   const onPressHandler = () => {
     return state.isRecording ? stopRecording() : startRecording();
   };
@@ -25,6 +25,11 @@ const TrackFromComponent = () => {
           title={state.isRecording ? "Stop" : "Start Recording"}
           onPress={onPressHandler}
         ></Button>
+      </Spacer>
+      <Spacer>
+        {!state.isRecording && state.locations.length ? (
+          <Button title="Save A track" onPress={saveTrack} />
+        ) : null}
       </Spacer>
     </View>
   );

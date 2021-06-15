@@ -16,6 +16,8 @@ import {
   Context as AuthContext,
 } from "./src/contexts/AuthContext";
 import { Provider as LocationProvider } from "./src/contexts/LocationContext";
+import { Provider as TrackProvider } from "./src/contexts/TrackContext";
+
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 function TrackStackScreen() {
@@ -94,10 +96,12 @@ const App = () => {
 };
 export default () => {
   return (
-    <AuthProvider>
-      <LocationProvider>
-        <App />
-      </LocationProvider>
-    </AuthProvider>
+    <TrackProvider>
+      <AuthProvider>
+        <LocationProvider>
+          <App />
+        </LocationProvider>
+      </AuthProvider>
+    </TrackProvider>
   );
 };
