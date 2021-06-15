@@ -7,8 +7,8 @@ import { useIsFocused } from "@react-navigation/native";
 import SafeAreaComponent from "../components/SafeAreaComponent";
 import MapComponent from "../components/MapComponent";
 import hookUseLocation from "../hooks/useLocation";
-
 import { Context as LocationContext } from "../contexts/LocationContext";
+import TrackFormComponent from "../components/TrackFormComponent";
 
 const serviceMessage = (message) => {
   return (
@@ -19,26 +19,23 @@ const serviceMessage = (message) => {
 };
 
 const TrackCreateScreen = ({ navigation }) => {
-  const { addLocation } = useContext(LocationContext);
+  const { addLocation, state } = useContext(LocationContext);
   // you can use useIsFocused() hooked or use navigation.isFocused() so both are working
   const isFocused = useIsFocused();
-  const [permissionInfo] = hookUseLocation(navigation.isFocused(), addLocation);
-
-  const onPressButton = () => {
-    return context.state.isRecording
-      ? context.stopRecording()
-      : context.startRecording();
-  };
+  console.log("-------state.is-------", state.isRecording);
+  const [permissionInfo] = hookUseLocation(
+    navigation.isFocused(),
+    (location) => {
+      addLocation(location, state.isRecording);
+    }
+  );
 
   return (
     <SafeAreaComponent>
       <Text h3> Create A Track</Text>
       <MapComponent />
       {permissionInfo ? serviceMessage(permissionInfo) : null}
-      {/* <Button
-        title={context.state.isRecording ? "Stop Recording" : "Start Recording"}
-        onPress={onPressButton}
-      ></Button> */}
+      <TrackFormComponent />
     </SafeAreaComponent>
   );
 };
