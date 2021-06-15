@@ -30,7 +30,7 @@ const MapComponent = (props) => {
         strokeColor="rgba(158, 158, 255,1.0)"
         fillColor="rgba(158, 158, 255, 0.4)"
       />
-      <Polyline coordinates={locations} />
+      {/* <Polyline coordinates={locations} /> */}
     </MapView>
   );
 };

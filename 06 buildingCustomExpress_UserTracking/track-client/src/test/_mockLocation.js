@@ -19,10 +19,14 @@ const getLocation = (increment) => {
 
 let counter = 0;
 // you can't find this in the expo documentation
-setInterval(() => {
+const updateLocation = () => {
   Location.EventEmitter.emit("Expo.locationChanged", {
     watchId: Location._getCurrentWatchId(),
     location: getLocation(counter),
   });
   counter++;
-}, 1000);
+  // console.log("---------->", counter);
+  // let d = new Date();
+  // console.log(d.toLocaleTimeString());
+};
+setInterval(updateLocation, 5000);

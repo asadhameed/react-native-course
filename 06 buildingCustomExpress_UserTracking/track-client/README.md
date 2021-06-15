@@ -10,6 +10,8 @@ This exercise helps to understand the following concept
 - 6. Inside in the ResolveAuthScreen is pass a callback function to redirect the signin screen (ResolveAuthScreen.js see useEffect function)
 - 7. How can use SafeAreaView in the component (SafeAreaComponent.js is use in AccountScreen.js and TrackCreateScreen.js)
 - 8. Import/export is function then use export default, if return object then should write export const {variable1} (LocationContext.js)
+- 9. When user click on create A task then start recording the current location and if the user move to other pages then stop the recording (TrackCreateScreen.js) use navigation.isFocused() or useIsFocused hook from @react-navigation/native.
+- 10. setInterval is not working properly in react native application therefore i increase time (test/\_mockLocation.js)
 
 ## Available Scripts
 
