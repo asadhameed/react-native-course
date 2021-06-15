@@ -46,6 +46,9 @@ export default (shouldTrack, callBack) => {
       if (subscription) subscription.remove();
       setSubscription(null);
     }
+    return () => {
+      if (subscription) subscription.remove();
+    };
   }, [shouldTrack, callBack]);
 
   return [permissionInfo];
