@@ -14,6 +14,7 @@ This exercise helps to understand the following concept
 - 10. setInterval is not working properly in react native application therefore i increase time (test/\_mockLocation.js)
 - 11. When callback is change Value inside in useEffect then it's not change the value (TrackCreateScreen.js comments area). So use the useCallback hooks from react. (Buggy UseEffects, Understanding Stale References, Kind of Fixed).
 - 12. In useEffect clean up the function. (useLocation.js)
+- 13. In useEffect if there is helper function then write that helper function inside in useEffect (useLocation.js , Avoiding Stale References )
 
 ## Available Scripts
 
