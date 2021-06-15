@@ -19,7 +19,10 @@ const serviceMessage = (message) => {
 };
 
 const TrackCreateScreen = ({ navigation }) => {
-  const { addLocation, state } = useContext(LocationContext);
+  const {
+    addLocation,
+    state: { isRecording },
+  } = useContext(LocationContext);
   // you can use useIsFocused() hooked or use navigation.isFocused() so both are working
   // const isFocused = useIsFocused();
   // console.log("-------state.is-------", state.isRecording);
@@ -34,12 +37,15 @@ const TrackCreateScreen = ({ navigation }) => {
   const callBack = useCallback(
     (location) => {
       // console.log("-------inside in callback-------", state.isRecording);
-      addLocation(location, state.isRecording);
+      addLocation(location, isRecording);
     },
-    [state.isRecording]
+    [isRecording]
   );
 
-  const [permissionInfo] = hookUseLocation(navigation.isFocused(), callBack);
+  const [permissionInfo] = hookUseLocation(
+    navigation.isFocused() || isRecording,
+    callBack
+  );
 
   return (
     <SafeAreaComponent>
