@@ -18,6 +18,7 @@ This exercise helps to understand the following concept
 - 14. How can create a hook form two context and then use it (useSaveTrack.js)
 - 15. How can config Axios with instance and header (TrackAPI.js) [Axios](https://www.npmjs.com/package/axios#global-axios-defaults)
 - 16. Navigation from component to screen use useNavigation hook from @react-navigation/native" (TrackFormComponent.js)
+- 17. The concept of addListener (TrackListScreen). When the user saves a record, the user will navigate to TrackListScreen if we don't use the addListenerEvent then the new record will don't show for us.
 
 ## Available Scripts
 

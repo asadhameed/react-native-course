@@ -1,11 +1,36 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React, { useContext, useEffect } from "react";
+import { StyleSheet, FlatList, TouchableOpacity } from "react-native";
+import { ListItem } from "react-native-elements";
+import { Context as TrackContext } from "../contexts/TrackContext";
+const TrackListScreen = ({ navigation }) => {
+  const { state, fetchTracks } = useContext(TrackContext);
+  // useEffect(() => {
+  //   fetchTracks();
+  // }, []);
+  //
 
-const TrackListScreen = () => {
+  useEffect(() => {
+    const subScribe = navigation.addListener("focus", fetchTracks);
+    return subScribe;
+  }, [navigation]);
+
   return (
-    <View>
-      <Text>THis is track List screen</Text>
-    </View>
+    <FlatList
+      data={state.tracks}
+      keyExtractor={(track) => track._id}
+      renderItem={({ item }) => {
+        return (
+          <TouchableOpacity>
+            <ListItem bottomDivider>
+              <ListItem.Content>
+                <ListItem.Title>{item.name}</ListItem.Title>
+              </ListItem.Content>
+              <ListItem.Chevron />
+            </ListItem>
+          </TouchableOpacity>
+        );
+      }}
+    />
   );
 };
 
