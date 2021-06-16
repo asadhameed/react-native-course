@@ -19,6 +19,7 @@ This exercise helps to understand the following concept
 - 15. How can config Axios with instance and header (TrackAPI.js) [Axios](https://www.npmjs.com/package/axios#global-axios-defaults)
 - 16. Navigation from component to screen use useNavigation hook from @react-navigation/native" (TrackFormComponent.js)
 - 17. The concept of addListener (TrackListScreen). When the user saves a record, the user will navigate to TrackListScreen if we don't use the addListenerEvent then the new record will don't show for us.
+- 18. How can send data from one screen to another use props.route(TrackListScreen.js and TrackDetailScreen) [Passing parameters to routes](https://reactnavigation.org/docs/params)
 
 ## Available Scripts
 
