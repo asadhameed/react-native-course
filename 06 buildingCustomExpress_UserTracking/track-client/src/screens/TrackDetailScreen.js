@@ -11,7 +11,6 @@ const TrackDetailScreen = ({ route }) => {
 
   const track = tracks.find((track) => track._id === id);
   const initialCoords = track.locations[0].coords;
-  console.log(track.locations);
   return (
     <View>
       <Text style={{ alignSelf: "center", fontSize: 24 }}>

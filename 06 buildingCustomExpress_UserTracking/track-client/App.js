@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { FontAwesome } from "@expo/vector-icons";
 
 import SignUp from "./src/screens/SignUp";
 import SignIn from "./src/screens/SignIn";
@@ -26,12 +27,12 @@ function TrackStackScreen() {
       <Stack.Screen
         name="trackListScreen"
         component={TrackListScreen}
-        options={{ title: "Tracks" }}
+        options={{ title: "Tracks", headerTitleAlign: "center" }}
       />
       <Stack.Screen
         name="trackDetailScreen"
         component={TrackDetailScreen}
-        options={{ title: "Track Detail" }}
+        options={{ title: "Track Detail", headerTitleAlign: "center" }}
       />
     </Stack.Navigator>
   );
@@ -61,16 +62,30 @@ function SignInSignUpStackScreens() {
 function TrackBottomTab() {
   return (
     <BottomTab.Navigator>
-      <BottomTab.Screen name="Tracks" component={TrackStackScreen} />
+      <BottomTab.Screen
+        name="Tracks"
+        component={TrackStackScreen}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome name="th-list" size={24} color="black" />
+          ),
+        }}
+      />
       <BottomTab.Screen
         name="createTrack"
         component={TrackCreateScreen}
-        options={{ title: "Create" }}
+        options={{
+          title: "Add Track",
+          tabBarIcon: () => <FontAwesome name="plus" size={24} color="black" />,
+        }}
       />
       <BottomTab.Screen
         name="account"
         component={AccountScreen}
-        options={{ title: "Account" }}
+        options={{
+          title: "Account",
+          tabBarIcon: () => <FontAwesome name="gear" size={24} color="black" />,
+        }}
       />
     </BottomTab.Navigator>
   );
