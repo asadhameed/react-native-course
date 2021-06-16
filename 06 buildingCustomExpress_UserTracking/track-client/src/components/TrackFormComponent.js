@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Button, Input } from "react-native-elements";
 import Spacer from "./Spacer";
 
@@ -9,6 +10,10 @@ const TrackFromComponent = () => {
   const { state, stopRecording, startRecording, changeName } =
     useContext(LocationContext);
   const [saveTrack] = useSaveTrack();
+  const navigation = useNavigation();
+  const navigationChange = () => {
+    navigation.navigate("Tracks");
+  };
   const onPressHandler = () => {
     return state.isRecording ? stopRecording() : startRecording();
   };
@@ -28,7 +33,10 @@ const TrackFromComponent = () => {
       </Spacer>
       <Spacer>
         {!state.isRecording && state.locations.length ? (
-          <Button title="Save A track" onPress={saveTrack} />
+          <Button
+            title="Save A track"
+            onPress={() => saveTrack(navigationChange)}
+          />
         ) : null}
       </Spacer>
     </View>
