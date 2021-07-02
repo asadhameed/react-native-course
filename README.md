@@ -22,11 +22,11 @@
 
 [06 buildingCustomExpress_UserTracking, Building a Custom Express API, In-App Authentication](https://github.com/asadhameed/react-native-course/tree/main/06%20buildingCustomExpress_UserTracking)
 
-[07 Diving into the Basics](https://github.com/asadhameed/react-native-course/)
+[07 Diving into the Basics](https://github.com/asadhameed/react-native-course/tree/main/07%20Diving%20into%20the%20Basics)
 
 #### Main Concept
 
-     1. Function.bind()
+     1. [Function.bind read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
 
 ## Main Scripts
 
