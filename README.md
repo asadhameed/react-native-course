@@ -22,6 +22,12 @@
 
 [06 buildingCustomExpress_UserTracking, Building a Custom Express API, In-App Authentication](https://github.com/asadhameed/react-native-course/tree/main/06%20buildingCustomExpress_UserTracking)
 
+[07 Diving into the Basics](https://github.com/asadhameed/react-native-course/)
+
+#### Main Concept
+
+     1. Function.bind()
+
 ## Main Scripts
 
 ### `expo init mobile_app`
