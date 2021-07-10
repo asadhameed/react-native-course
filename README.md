@@ -6,25 +6,31 @@
 - State Management and Hooks
 - Use Outside API
 
-[00 flatList , List building with style](https://github.com/asadhameed/react-native-course/tree/main/00%20flatList)
+[00 flatList](https://github.com/asadhameed/react-native-course/tree/main/00%20flatList) \
+ <strong>concepts:</strong> Flat list, components, NavigationContainer, createStackNavigator.
 
-[01 navigationBetweenScreen ,Navigating Users Between Screens](https://github.com/asadhameed/react-native-course/tree/main/01%20navigationBetweenScreen)
+[01 navigationBetweenScreen](https://github.com/asadhameed/react-native-course/tree/main/01%20navigationBetweenScreen) \
+<strong>concepts:</strong> Navigating Users Between Screens,TouchableOpacity and Button concept.
 
-[02 componentsReusable ,Building Reusable Components](https://github.com/asadhameed/react-native-course/tree/main/02%20componentsReusable)
+[02 componentsReusable](https://github.com/asadhameed/react-native-course/tree/main/02%20componentsReusable) \
+<strong>concepts:</strong> Reusable components, Image on screen, Pass a value to the component on props method
 
-[03 stateManagement ,State Management in React Components](https://github.com/asadhameed/react-native-course/tree/main/03%20stateManagement)
+[03 stateManagement](https://github.com/asadhameed/react-native-course/tree/main/03%20stateManagement) \
+<strong>concepts:</strong> State Managements, render TextInput.
 
-[04 RestaurantSearchApp ,Putting It All Together, Using Outside API's,Making Hooks Reusable,Navigation with Parameters](https://github.com/asadhameed/react-native-course/tree/main/04%20RestaurantSearchApp)
+[04 RestaurantSearchApp](https://github.com/asadhameed/react-native-course/tree/main/04%20RestaurantSearchApp) \
+<strong>concepts:</strong> Using Outside, Making Hooks Reusable, Navigation with Parameters
 
-[05 StateManagementContext ,Advanced State Management with Context](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext)
+[05 StateManagementContext](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext) \
+<strong>concepts:</strong> Screen Options, Navigation.setOptions, useReducer, Advanced State Management with Context.
 
-[05 StateManagementContext-jsonserver, Data API Sync](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext-jsonserver)
+[05 StateManagementContext-jsonserver](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext-jsonserver) \ <strong>concepts:</strong> Client and Server.
 
-[06 buildingCustomExpress_UserTracking, Building a Custom Express API, In-App Authentication](https://github.com/asadhameed/react-native-course/tree/main/06%20buildingCustomExpress_UserTracking)
+[06 buildingCustomExpress_UserTracking](https://github.com/asadhameed/react-native-course/tree/main/06%20buildingCustomExpress_UserTracking) \ <strong>concepts:</strong> Client and Server, createBottomTabNavigator, createStackNavigator and Switch , In-App Authentication, Generic type of Context create, SafeAreaView, Mongo, Modals, create the different router
 
-[07 Diving into the Basics](https://github.com/asadhameed/react-native-course/tree/main/07%20Diving%20into%20the%20Basics)
+[07 Diving into the Basics](https://github.com/asadhameed/react-native-course/tree/main/07%20Diving%20into%20the%20Basics) \ <strong>concepts:</strong> React Native, Flexbox, Inline Style, State, Function.bind
 
-8.  Components_Styling:-(combines two style , TouchableWithoutFeedback, Adding Custom Fonts, The Use of Icon , ScrollView and flatList)
+[08 Components_Styling](https://github.com/asadhameed/react-native-course/tree/main/08%20%20%20Components_Styling) <strong>concepts:</strong> combines two style , TouchableWithoutFeedback, Adding Custom Fonts, The Use of Icon , ScrollView and flatList
 
 #### Main Concept
 
