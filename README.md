@@ -24,11 +24,14 @@
 [05 StateManagementContext](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext) \
 <strong>concepts:</strong> Screen Options, Navigation.setOptions, useReducer, Advanced State Management with Context.
 
-[05 StateManagementContext-jsonserver](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext-jsonserver) \ <strong>concepts:</strong> Client and Server.
+[05 StateManagementContext-jsonserver](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext-jsonserver) \
+<strong>concepts:</strong> Client and Server.
 
-[06 buildingCustomExpress_UserTracking](https://github.com/asadhameed/react-native-course/tree/main/06%20buildingCustomExpress_UserTracking) \ <strong>concepts:</strong> Client and Server, createBottomTabNavigator, createStackNavigator and Switch , In-App Authentication, Generic type of Context create, SafeAreaView, Mongo, Modals, create the different router
+[06 buildingCustomExpress_UserTracking](https://github.com/asadhameed/react-native-course/tree/main/06%20buildingCustomExpress_UserTracking) \
+<strong>concepts:</strong> Client and Server, createBottomTabNavigator, createStackNavigator and Switch , In-App Authentication, Generic type of Context create, SafeAreaView, Mongo, Modals, create the different router
 
-[07 Diving into the Basics](https://github.com/asadhameed/react-native-course/tree/main/07%20Diving%20into%20the%20Basics) \ <strong>concepts:</strong> React Native, Flexbox, Inline Style, State, Function.bind
+[07 Diving into the Basics](https://github.com/asadhameed/react-native-course/tree/main/07%20Diving%20into%20the%20Basics) \
+<strong>concepts:</strong> React Native, Flexbox, Inline Style, State, Function.bind
 
 [08 Components_Styling](https://github.com/asadhameed/react-native-course/tree/main/08%20%20%20Components_Styling) <strong>concepts:</strong> combines two style , TouchableWithoutFeedback, Adding Custom Fonts, The Use of Icon , ScrollView and flatList
 
