@@ -35,6 +35,8 @@
 
 [08 Components_Styling](https://github.com/asadhameed/react-native-course/tree/main/08%20%20%20Components_Styling) <strong>concepts:</strong> combines two style , TouchableWithoutFeedback, Adding Custom Fonts, The Use of Icon , ScrollView and flatList
 
+[09 ResponsiveAdaptiveUserInterfaces](https://github.com/asadhameed/react-native-course/tree/main/09%20ResponsiveAdaptiveUserInterfaces) <strong>concepts:</strong> orientation properties, KeyboardAvoidingView , ScreenOrientation, Dimensions, Using Platform-specific Code Files, SafeAreaView,TouchableOpacity and TouchableNativeFeedback
+
 #### Main Concept
 
 1. [Function.bind read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
