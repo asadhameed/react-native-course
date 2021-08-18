@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+/*************************************************************
+ * The comments section is belong for Redux system
+ * I use Context system from React
+ *************************************************************/
+
+import React, { useState, useContext } from "react";
 import {
   View,
   Text,
@@ -7,17 +12,21 @@ import {
   Button,
   ScrollView,
 } from "react-native";
-import { useDispatch } from "react-redux";
 
-import * as placeAction from "../store/places-actions";
+//import { useDispatch } from "react-redux";
+
+//import * as placeAction from "../store/places-actions";
+import { Context as PlaceContext } from "../contexts/PlaceContext";
 import Colors from "../constants/Colors";
 
 const NewPlaceScreen = (props) => {
   const [title, setTitle] = useState();
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
+  const { addPlace } = useContext(PlaceContext);
 
   const savePlaceHandler = () => {
-    dispatch(placeAction.addPlace(title));
+    //  dispatch(placeAction.addPlace(title));
+    addPlace(title);
     console.log(`Title = ${title}`);
     props.navigation.goBack();
   };
@@ -45,7 +54,6 @@ const styles = StyleSheet.create({
     margin: 30,
     flex: 1,
     alignContent: "center",
-    // alignItems: "center",
   },
   title: {
     fontSize: 18,

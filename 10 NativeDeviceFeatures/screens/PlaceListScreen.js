@@ -1,17 +1,27 @@
-import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 
 import PlaceItem from "../components/PlaceItem";
+import { Context as PlaceContext } from "../contexts/PlaceContext";
 
 const PlaceListScreen = (props) => {
-  const places = useSelector((state) => state.places.places);
+  /*********************************
+   * The comment section is for React-redux
+   ********************************/
+  // const places = useSelector((state) => state.places.places);
+  // console.log(places);
+
+  /****************************************
+   * The following section is for Context from react native
+   ****************************************/
+  const places = useContext(PlaceContext).state;
   console.log(places);
+
   const onSelectHandler = (place) => {
     props.navigation.navigate("PlaceDetailScreen", { place });
   };
   return (
-    // <View style={styles.container}>
     <FlatList
       data={places}
       keyExtractor={(place) => place.id}
@@ -22,7 +32,6 @@ const PlaceListScreen = (props) => {
         />
       )}
     />
-    // </View>
   );
 };
 
