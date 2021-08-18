@@ -54,7 +54,10 @@ const PlaceNavigator = () => {
         <PlaceStack.Screen
           name="PlaceDetailScreen"
           component={PlaceDetailScreen}
-          options={{ ...headerConfiguration("Place Detail") }}
+          // options={{ ...headerConfiguration("Place Detail") }}
+          options={({ route }) => ({
+            ...headerConfiguration(route.params.place.title),
+          })}
         />
         <PlaceStack.Screen
           name="NewPlaceScreen"

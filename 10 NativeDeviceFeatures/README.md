@@ -10,6 +10,7 @@ This exercise helps to understand the concept of Native Device Features \
 ## A New concept
 
 1. Make a Header and headerRight has a button to navigate to another screen (PlacesNavigator.json)
+2. How can set a header title of screen from params dynamically (PlaceNavigation.js PlaceDetailScreen)
 
 ## Main Scripts
 

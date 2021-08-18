@@ -1,7 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const PlaceDetailScreen = () => {
+const PlaceDetailScreen = (props) => {
+  const place = props.route.params;
+
   return (
     <View style={styles.container}>
       <Text>This is Place Detail</Text>
