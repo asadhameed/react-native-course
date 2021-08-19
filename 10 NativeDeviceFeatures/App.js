@@ -32,6 +32,12 @@ import React from "react";
 import PlaceNavigator from "./navigation/PlacesNavigator";
 import { Provider } from "./contexts/PlaceContext";
 
+import { createDataBase } from "./helpers/db";
+
+createDataBase()
+  .then(() => console.log("Create a database"))
+  .catch((err) => console.log(err));
+
 export default function App() {
   return (
     <Provider>

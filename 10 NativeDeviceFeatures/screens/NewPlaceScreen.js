@@ -11,6 +11,7 @@ import {
   TextInput,
   Button,
   ScrollView,
+  Alert,
 } from "react-native";
 
 //import { useDispatch } from "react-redux";
@@ -28,9 +29,13 @@ const NewPlaceScreen = (props) => {
 
   const savePlaceHandler = () => {
     //  dispatch(placeAction.addPlace(title));
-    addPlace(title, selectedImage);
 
-    props.navigation.goBack();
+    addPlace(title, selectedImage)
+      .then(() => props.navigation.goBack())
+      .catch((err) => {
+        //Alert.alert("Place isn't save ", err.toString());
+        Alert.alert("Place isn't save ", "Please try again later");
+      });
   };
   return (
     <ScrollView>

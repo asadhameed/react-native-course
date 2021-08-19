@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { StyleSheet, FlatList } from "react-native";
+import React, { useContext, useEffect } from "react";
+import { StyleSheet, FlatList, Alert } from "react-native";
 import { useSelector } from "react-redux";
 
 import PlaceItem from "../components/PlaceItem";
@@ -15,8 +15,18 @@ const PlaceListScreen = (props) => {
   /****************************************
    * The following section is for Context from react native
    ****************************************/
-  const places = useContext(PlaceContext).state;
-  console.log(places);
+  const placeContext = useContext(PlaceContext);
+  const places = placeContext.state;
+  useEffect(() => {
+    const getAllPlace = async () => {
+      try {
+        await placeContext.fetchPlaceFromDB();
+      } catch (err) {
+        Alert.alert("Can't fetch places try later");
+      }
+    };
+    getAllPlace();
+  }, []);
 
   const onSelectHandler = (place) => {
     props.navigation.navigate("PlaceDetailScreen", { place });

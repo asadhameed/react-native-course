@@ -15,6 +15,11 @@ This exercise helps to understand the concept of Native Device Features \
    1. How can make a state management use Redux, react-redux library (App.js comment section)
    2. Make the State Management on Context system (App.js)
 4. How can a Take Picture to use device camera (ImagePicker.js)
+5. How can store image from cache memory to file System (PlaceContext.js)
+6. How can create a sqlite database (db.js , app.js)
+7. How can handle Promise
+   1. function().then(()=>{}).catch((err)=>console.log(err)) see in file (NewPlaceScreen.js function savePlaceHandler)
+   2. try{}catch(err){} see in file (PlaceListScreen.js function getAllPlace)
 
 ## Main Scripts
 
@@ -55,6 +60,12 @@ More help [Expo Image Picker](https://docs.expo.dev/versions/v42.0.0/sdk/imagepi
 expo-file-system provides access to a file system stored locally on the device. Within Expo Go, each project has a separate file system and has no access to the file system of other Expo projects. However, it can save content shared by other projects to the local filesystem, as well as share local files with other projects. It is also capable of uploading and downloading files from network URLs.
 
 More help [Expo File System](https://docs.expo.dev/versions/v42.0.0/sdk/filesystem/)
+
+### `expo install expo-sqlite`
+
+expo-sqlite gives your app access to a database that can be queried through a WebSQL-like API. The database is persisted across restarts of your app..
+
+More help [Expo SQLITE](https://docs.expo.dev/versions/v42.0.0/sdk/sqlite/)
 
 ### `npm start`
 
