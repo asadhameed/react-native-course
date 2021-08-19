@@ -18,16 +18,18 @@ import {
 //import * as placeAction from "../store/places-actions";
 import { Context as PlaceContext } from "../contexts/PlaceContext";
 import Colors from "../constants/Colors";
+import ImagePicker from "../components/ImgPicker";
 
 const NewPlaceScreen = (props) => {
   const [title, setTitle] = useState();
+  const [selectedImage, setSelectedImage] = useState(null);
   //const dispatch = useDispatch();
   const { addPlace } = useContext(PlaceContext);
 
   const savePlaceHandler = () => {
     //  dispatch(placeAction.addPlace(title));
-    addPlace(title);
-    console.log(`Title = ${title}`);
+    addPlace(title, selectedImage);
+
     props.navigation.goBack();
   };
   return (
@@ -38,6 +40,9 @@ const NewPlaceScreen = (props) => {
           style={styles.textInput}
           value={title}
           onChangeText={setTitle}
+        />
+        <ImagePicker
+          onImageTaken={(imagePath) => setSelectedImage(imagePath)}
         />
         <Button
           title="save"

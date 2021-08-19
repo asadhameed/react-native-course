@@ -14,6 +14,7 @@ This exercise helps to understand the concept of Native Device Features \
 3. State Management
    1. How can make a state management use Redux, react-redux library (App.js comment section)
    2. Make the State Management on Context system (App.js)
+4. How can a Take Picture to use device camera (ImagePicker.js)
 
 ## Main Scripts
 
