@@ -20,6 +20,7 @@ This exercise helps to understand the concept of Native Device Features \
 7. How can handle Promise
    1. function().then(()=>{}).catch((err)=>console.log(err)) see in file (NewPlaceScreen.js function savePlaceHandler)
    2. try{}catch(err){} see in file (PlaceListScreen.js function getAllPlace)
+8. How can get Location from device (LocationPicker.js)
 
 ## Main Scripts
 

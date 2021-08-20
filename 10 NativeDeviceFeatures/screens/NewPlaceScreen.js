@@ -20,6 +20,7 @@ import {
 import { Context as PlaceContext } from "../contexts/PlaceContext";
 import Colors from "../constants/Colors";
 import ImagePicker from "../components/ImgPicker";
+import LocationPicker from "../components/LocationPicker";
 
 const NewPlaceScreen = (props) => {
   const [title, setTitle] = useState();
@@ -49,6 +50,7 @@ const NewPlaceScreen = (props) => {
         <ImagePicker
           onImageTaken={(imagePath) => setSelectedImage(imagePath)}
         />
+        <LocationPicker />
         <Button
           title="save"
           color={Colors.primary}

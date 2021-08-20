@@ -19,8 +19,6 @@ const reducer = (state, action) => {
       return action.payload;
     case "DELETE_PLACE":
       const places = state.filter((place) => place.id !== action.payload);
-      console.log("----------------->Delete Place---------->");
-      console.log(places);
       return places;
     default:
       state;
@@ -77,8 +75,7 @@ export const Provider = (props) => {
 
   const deletePlace = async (id) => {
     try {
-      const result = await deletePlaceById(id);
-      console.log("-------------->Result------->", result);
+      await deletePlaceById(id);
       dispatch({ type: "DELETE_PLACE", payload: id });
     } catch (err) {
       throw err;
