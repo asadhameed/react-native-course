@@ -74,6 +74,12 @@ expo-location allows reading geolocation information from the device. Your app c
 
 More help [Expo Location](https://docs.expo.dev/versions/v42.0.0/sdk/location/)
 
+### `expo install react-native-maps`
+
+react-native-maps provides a Map component that uses Apple Maps or Google Maps on iOS and Google Maps on Android. Expo uses react-native-maps at react-community/react-native-maps. No setup required for use within the Expo Go app. See below for instructions on how to configure for deployment as a standalone app on Android and iOS.
+
+More help [React Native Maps](https://docs.expo.dev/versions/v42.0.0/sdk/map-view/)
+
 ### `npm start`
 
 Runs the app in the development mode.<br />

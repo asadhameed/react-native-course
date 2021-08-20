@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { StyleSheet, FlatList, Alert } from "react-native";
+import { StyleSheet, Text, FlatList, Alert } from "react-native";
 import { useSelector } from "react-redux";
 
 import PlaceItem from "../components/PlaceItem";
@@ -43,11 +43,11 @@ const PlaceListScreen = (props) => {
     <FlatList
       data={places}
       keyExtractor={(place) => place.id}
-      renderItem={(itemDate) => (
+      renderItem={(itemData) => (
         <PlaceItem
-          place={itemDate.item}
-          onSelect={() => onSelectHandler(itemDate.item)}
-          onDelete={() => onDeleteHandler(itemDate.item.id)}
+          place={itemData.item}
+          onSelect={() => onSelectHandler(itemData.item)}
+          onDelete={() => onDeleteHandler(itemData.item.id)}
         />
       )}
     />

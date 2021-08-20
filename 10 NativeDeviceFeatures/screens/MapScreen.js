@@ -1,11 +1,35 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import MapView, { Circle } from "react-native-maps";
 
-const MapScreen = () => {
+import Colors from "../constants/Colors";
+
+const MapScreen = (props) => {
+  const { location } = props.route.params;
+  console.log(location);
+  const latitude = location ? location.lat : 28.028;
+  const longitude = location ? location.lng : 65.63;
+  const mapRegion = {
+    latitude,
+    longitude,
+    longitude: 71.63,
+    latitudeDelta: 0.001,
+    longitudeDelta: 0.01,
+  };
   return (
-    <View style={styles.container}>
-      <Text>This is Map Screen</Text>
-    </View>
+    <MapView style={styles.map} initialRegion={mapRegion}>
+      {location && (
+        <Circle
+          center={{
+            latitude,
+            longitude,
+          }}
+          radius={30}
+          strokeColor={Colors.primaryRGB}
+          fillColor={Colors.primaryRGBA}
+        />
+      )}
+    </MapView>
   );
 };
 
@@ -14,6 +38,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignContent: "center",
     alignItems: "center",
+  },
+  map: {
+    flex: 1,
   },
 });
 

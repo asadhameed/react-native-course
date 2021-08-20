@@ -50,7 +50,7 @@ const NewPlaceScreen = (props) => {
         <ImagePicker
           onImageTaken={(imagePath) => setSelectedImage(imagePath)}
         />
-        <LocationPicker />
+        <LocationPicker navigation={props.navigation} />
         <Button
           title="save"
           color={Colors.primary}
@@ -63,18 +63,19 @@ const NewPlaceScreen = (props) => {
 
 const styles = StyleSheet.create({
   form: {
-    margin: 30,
+    marginVertical: 10,
+    marginHorizontal: 30,
     flex: 1,
     alignContent: "center",
   },
   title: {
     fontSize: 18,
-    marginBottom: 15,
+    marginBottom: 10,
   },
   textInput: {
     borderBottomColor: "#ccc",
     borderBottomWidth: 1,
-    marginBottom: 15,
+    marginBottom: 10,
     paddingVertical: 5,
     paddingHorizontal: 2,
   },
