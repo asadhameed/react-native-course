@@ -6,27 +6,27 @@ import Colors from "../constants/Colors";
 
 const MapPreview = (props) => {
   return (
-    <TouchableOpacity style={styles.map} onPress={props.onPress}>
-      <MapView
-        style={styles.map}
-        initialRegion={{
+    // <TouchableOpacity style={styles.map} onPress={props.onPress}>
+    <MapView
+      style={styles.map}
+      initialRegion={{
+        latitude: props.location.lat,
+        longitude: props.location.lng,
+        latitudeDelta: 0.001,
+        longitudeDelta: 0.001,
+      }}
+    >
+      <Circle
+        center={{
           latitude: props.location.lat,
           longitude: props.location.lng,
-          latitudeDelta: 0.001,
-          longitudeDelta: 0.001,
         }}
-      >
-        <Circle
-          center={{
-            latitude: props.location.lat,
-            longitude: props.location.lng,
-          }}
-          radius={10}
-          strokeColor={Colors.primaryRGB}
-          fillColor={Colors.primaryRGBA}
-        />
-      </MapView>
-    </TouchableOpacity>
+        radius={10}
+        strokeColor={Colors.primaryRGB}
+        fillColor={Colors.primaryRGBA}
+      />
+    </MapView>
+    // </TouchableOpacity>
   );
 };
 

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Alert,
   ActivityIndicator,
+  TouchableOpacity,
 } from "react-native";
 import * as Location from "expo-location";
 
@@ -56,7 +57,12 @@ const LocationPicker = (props) => {
         {isFetchingLocation ? (
           <ActivityIndicator size="large" color={Colors.primary} />
         ) : (
-          viewMapPreView()
+          <TouchableOpacity
+            style={styles.map}
+            onPress={pickLocationOnMapHandler}
+          >
+            {viewMapPreView()}
+          </TouchableOpacity>
         )}
       </View>
       <View style={styles.actions}>
@@ -94,6 +100,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     width: "100%",
+  },
+  map: {
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
