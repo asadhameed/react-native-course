@@ -31,6 +31,14 @@ const PlaceListScreen = (props) => {
   const onSelectHandler = (place) => {
     props.navigation.navigate("PlaceDetailScreen", { place });
   };
+
+  const onDeleteHandler = async (id) => {
+    try {
+      await placeContext.deletePlace(id);
+    } catch (error) {
+      Alert.alert("Can't Delete place try later");
+    }
+  };
   return (
     <FlatList
       data={places}
@@ -39,6 +47,7 @@ const PlaceListScreen = (props) => {
         <PlaceItem
           place={itemDate.item}
           onSelect={() => onSelectHandler(itemDate.item)}
+          onDelete={() => onDeleteHandler(itemDate.item.id)}
         />
       )}
     />

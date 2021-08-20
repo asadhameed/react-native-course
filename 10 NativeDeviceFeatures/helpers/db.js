@@ -4,9 +4,9 @@ const db = SQLite.openDatabase("places.db");
 
 const CREATE_TABLE =
   "CREATE TABLE IF NOT EXISTS places (id INTEGER PRIMARY KEY NOT NULL, title TEXT NOT NULL, imageUri TEXT NOT NULL, address TEXT NOT NULL, lat REAL NOT NULL, lng REAL NOT NULL  )";
-
 const INSERT_PLACE = `INSERT INTO places (title, imageUri, address , lat , lng) values (?,?,?,?,?)`;
 const FETCH_PLACES = "SELECT * FROM places";
+const DELETE_PLACE = "DELETE FROM places WHERE  id = ?";
 
 export const createDataBase = () => {
   const promise = new Promise((resolve, reject) => {
@@ -52,6 +52,24 @@ export const fetchPlaces = () => {
         [],
         (_, result) => {
           resolve(result);
+        },
+        (_, err) => {
+          reject(err);
+        }
+      );
+    });
+  });
+  return promise;
+};
+
+export const deletePlaceById = (id) => {
+  const promise = new Promise((resolve, reject) => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        DELETE_PLACE,
+        [id],
+        () => {
+          resolve();
         },
         (_, err) => {
           reject(err);

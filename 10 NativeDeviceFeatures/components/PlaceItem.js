@@ -1,16 +1,28 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 import Colors from "../constants/Colors";
 
 const PlaceItem = (props) => {
   return (
-    <TouchableOpacity onPress={props.onSelect} style={styles.placeItem}>
-      <Image style={styles.image} source={{ uri: props.place.imageUri }} />
-      <View style={styles.infoContainer}>
-        <Text style={styles.title}>{props.place.title}</Text>
-        {/* <Text style={styles.address}>{props.place.address}</Text> */}
-      </View>
-    </TouchableOpacity>
+    <View style={styles.placeItem}>
+      <TouchableOpacity
+        style={{ flexDirection: "row" }}
+        onPress={props.onSelect}
+      >
+        <Image style={styles.image} source={{ uri: props.place.imageUri }} />
+        <View style={styles.infoContainer}>
+          <Text style={styles.title}>{props.place.title}</Text>
+          <Text style={styles.address}>{props.place.address}</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={props.onDelete}
+        style={{ alignItems: "flex-end" }}
+      >
+        <AntDesign name="delete" size={28} color={Colors.primary} />
+      </TouchableOpacity>
+    </View>
   );
 };
 
@@ -18,7 +30,7 @@ const styles = StyleSheet.create({
   placeItem: {
     borderBottomColor: "#ccc",
     borderBottomWidth: 1,
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     paddingVertical: 15,
     flexDirection: "row",
     alignItems: "center",

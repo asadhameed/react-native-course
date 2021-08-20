@@ -16,7 +16,7 @@ This exercise helps to understand the concept of Native Device Features \
    2. Make the State Management on Context system (App.js)
 4. How can a Take Picture to use device camera (ImagePicker.js)
 5. How can store image from cache memory to file System (PlaceContext.js)
-6. How can create a sqlite database (db.js , app.js)
+6. How can create a sqlite database , create a table, insert data, select data and delete data (db.js , app.js)
 7. How can handle Promise
    1. function().then(()=>{}).catch((err)=>console.log(err)) see in file (NewPlaceScreen.js function savePlaceHandler)
    2. try{}catch(err){} see in file (PlaceListScreen.js function getAllPlace)
@@ -63,9 +63,15 @@ More help [Expo File System](https://docs.expo.dev/versions/v42.0.0/sdk/filesyst
 
 ### `expo install expo-sqlite`
 
-expo-sqlite gives your app access to a database that can be queried through a WebSQL-like API. The database is persisted across restarts of your app..
+expo-sqlite gives your app access to a database that can be queried through a WebSQL-like API. The database is persisted across restarts of your app.
 
 More help [Expo SQLITE](https://docs.expo.dev/versions/v42.0.0/sdk/sqlite/)
+
+### `expo install expo-location`
+
+expo-location allows reading geolocation information from the device. Your app can poll for the current location or subscribe to location update events.
+
+More help [Expo Location](https://docs.expo.dev/versions/v42.0.0/sdk/location/)
 
 ### `npm start`
 
