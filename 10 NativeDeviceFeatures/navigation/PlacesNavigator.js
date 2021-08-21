@@ -69,19 +69,21 @@ const PlaceNavigator = () => {
           component={MapScreen}
           options={(props) => ({
             ...headerConfiguration("Map Screen"),
-            headerRight: () => (
-              <TouchableOpacity
-                onPress={() => {
-                  props.navigation.navigate("NewPlaceScreen", {
-                    location: props.route.params.location,
-                  });
+            headerRight: () => {
+              return !props.route.params.readOnly ? (
+                <TouchableOpacity
+                  onPress={() => {
+                    props.navigation.navigate("NewPlaceScreen", {
+                      location: props.route.params.location,
+                    });
 
-                  // props.navigation.goBack();
-                }}
-              >
-                <Text style={styles.headerButtonText}>Save</Text>
-              </TouchableOpacity>
-            ),
+                    // props.navigation.goBack();
+                  }}
+                >
+                  <Text style={styles.headerButtonText}>Save</Text>
+                </TouchableOpacity>
+              ) : null;
+            },
           })}
         />
       </PlaceStack.Navigator>

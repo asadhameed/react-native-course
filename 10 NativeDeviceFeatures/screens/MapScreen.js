@@ -28,8 +28,10 @@ const MapScreen = (props) => {
   }, [selectedLocation, isAvailableLocation]);
 
   const selectLocationHandler = (event) => {
-    setSelectedLocation(event.nativeEvent.coordinate);
-    setIsAvailableLocation(true);
+    if (!props.route.params.readOnly) {
+      setSelectedLocation(event.nativeEvent.coordinate);
+      setIsAvailableLocation(true);
+    }
   };
   return (
     <MapView

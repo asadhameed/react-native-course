@@ -25,7 +25,7 @@ This exercise helps to understand the concept of Native Device Features \
    2. try{}catch(err){} see in file (PlaceListScreen.js function getAllPlace)
 9. How can get Location from device (LocationPicker.js)
 10. MapView have different component like Circle and Marker (MapScreen.js, MapPreview.js)
-11. If you want to update the MapView then use region props (MapPreview.js)
+11. If you want to update the MapView then use region props and also for Marker the coordinate is also take from initialRegion (MapPreview.js)
 
 ## Main Scripts
 

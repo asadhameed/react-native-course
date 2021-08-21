@@ -28,13 +28,24 @@ const MapPreview = (props) => {
         strokeColor={Colors.primaryRGB}
         fillColor={Colors.primaryRGBA}
       /> */}
-      <Marker
+
+      {/*************************************************************
+       *  If MapView has region props then the following comments
+       *  code is not working.
+       *   To solve the problem:- In A Marker component the coordinate props
+       *   will have same  coordinate like MapView component have the regions
+       *
+       *    solution :- coordinate={{ ...initialRegion }}
+       **********************************************************/}
+
+      {/* <Marker
         coordinate={{
           latitude: props.location.longitude,
           longitude: props.location.longitude,
         }}
         pinColor={Colors.primary}
-      >
+      ></Marker> */}
+      <Marker coordinate={{ ...initialRegion }} pinColor={Colors.primary}>
         {/* <View style={{ backgroundColor: "red", padding: 10 }}>
           <Text>SF</Text>
         </View> */}

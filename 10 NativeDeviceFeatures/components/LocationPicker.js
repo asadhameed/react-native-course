@@ -61,7 +61,8 @@ const LocationPicker = (props) => {
     return !userLocation ? (
       <Text>No Location chosen yet!</Text>
     ) : (
-      <MapPreview location={userLocation} onPress={pickLocationOnMapHandler} />
+      // <MapPreview location={userLocation} onPress={pickLocationOnMapHandler} />
+      <MapPreview location={userLocation} />
     );
   };
   return (
