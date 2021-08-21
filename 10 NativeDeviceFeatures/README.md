@@ -21,6 +21,7 @@ This exercise helps to understand the concept of Native Device Features \
    1. function().then(()=>{}).catch((err)=>console.log(err)) see in file (NewPlaceScreen.js function savePlaceHandler)
    2. try{}catch(err){} see in file (PlaceListScreen.js function getAllPlace)
 8. How can get Location from device (LocationPicker.js)
+9. MapView have different component like Circle and Marker (MapScreen.js, MapPreview.js)
 
 ## Main Scripts
 

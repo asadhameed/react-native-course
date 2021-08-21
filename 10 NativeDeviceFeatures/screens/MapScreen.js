@@ -1,12 +1,11 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import MapView, { Circle } from "react-native-maps";
+import MapView, { Circle, Marker } from "react-native-maps";
 
 import Colors from "../constants/Colors";
 
 const MapScreen = (props) => {
   const { location } = props.route.params;
-  console.log(location);
   const latitude = location ? location.lat : 28.028;
   const longitude = location ? location.lng : 65.63;
   const mapRegion = {
@@ -19,14 +18,21 @@ const MapScreen = (props) => {
   return (
     <MapView style={styles.map} initialRegion={mapRegion}>
       {location && (
-        <Circle
-          center={{
-            latitude,
-            longitude,
+        // <Circle
+        //   center={{
+        //     latitude,
+        //     longitude,
+        //   }}
+        //   radius={30}
+        //   strokeColor={Colors.primaryRGB}
+        //   fillColor={Colors.primaryRGBA}
+        // />
+        <Marker
+          coordinate={{
+            latitude: latitude,
+            longitude: longitude,
           }}
-          radius={30}
-          strokeColor={Colors.primaryRGB}
-          fillColor={Colors.primaryRGBA}
+          //pinColor={Colors.primary}
         />
       )}
     </MapView>
