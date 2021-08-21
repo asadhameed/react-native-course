@@ -16,7 +16,8 @@ const ImgPicker = (props) => {
         "You need to grant camera Permission to access this app"
       );
       return false;
-    } else return true;
+    }
+    return true;
   };
 
   const packImage = async () => {

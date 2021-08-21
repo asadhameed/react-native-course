@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import MapView, { Circle, Marker } from "react-native-maps";
 
@@ -6,18 +6,42 @@ import Colors from "../constants/Colors";
 
 const MapScreen = (props) => {
   const { location } = props.route.params;
-  const latitude = location ? location.lat : 28.028;
-  const longitude = location ? location.lng : 65.63;
+  const [isAvailableLocation, setIsAvailableLocation] = useState(
+    location ? true : false
+  );
+  const [selectedLocation, setSelectedLocation] = useState(
+    location
+      ? { latitude: location.lat, longitude: location.lng }
+      : { latitude: 33.97271663348013, longitude: 71.4385470028896 }
+  );
+
   const mapRegion = {
-    latitude,
-    longitude,
-    longitude: 71.63,
+    ...selectedLocation,
     latitudeDelta: 0.001,
     longitudeDelta: 0.01,
   };
+
+  useEffect(() => {
+    if (isAvailableLocation) {
+      props.navigation.setParams({ location: selectedLocation });
+    }
+  }, [selectedLocation, isAvailableLocation]);
+
+  const selectLocationHandler = (event) => {
+    setSelectedLocation(event.nativeEvent.coordinate);
+    setIsAvailableLocation(true);
+  };
+
+  //console.log(" -------MapScreen---- selectedLocation------", selectedLocation);
+
   return (
-    <MapView style={styles.map} initialRegion={mapRegion}>
-      {location && (
+    <MapView
+      style={styles.map}
+      initialRegion={mapRegion}
+      onPress={selectLocationHandler}
+      onDoublePress={selectLocationHandler}
+    >
+      {isAvailableLocation && (
         // <Circle
         //   center={{
         //     latitude,
@@ -27,13 +51,7 @@ const MapScreen = (props) => {
         //   strokeColor={Colors.primaryRGB}
         //   fillColor={Colors.primaryRGBA}
         // />
-        <Marker
-          coordinate={{
-            latitude: latitude,
-            longitude: longitude,
-          }}
-          //pinColor={Colors.primary}
-        />
+        <Marker coordinate={selectedLocation} pinColor={Colors.primary} />
       )}
     </MapView>
   );

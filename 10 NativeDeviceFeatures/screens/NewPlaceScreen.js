@@ -3,7 +3,7 @@
  * I use Context system from React
  *************************************************************/
 
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
   View,
   Text,
@@ -25,6 +25,7 @@ import LocationPicker from "../components/LocationPicker";
 const NewPlaceScreen = (props) => {
   const [title, setTitle] = useState();
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedUserLocation, setSelectedUserLocation] = useState();
   //const dispatch = useDispatch();
   const { addPlace } = useContext(PlaceContext);
 
@@ -38,6 +39,12 @@ const NewPlaceScreen = (props) => {
         Alert.alert("Place isn't save ", "Please try again later");
       });
   };
+
+  useEffect(() => {
+    const { location } = props.route.params ? props.route.params : "undefined";
+    setSelectedUserLocation(location);
+  }, [props.route.params]);
+
   return (
     <ScrollView>
       <View style={styles.form}>
@@ -50,7 +57,10 @@ const NewPlaceScreen = (props) => {
         <ImagePicker
           onImageTaken={(imagePath) => setSelectedImage(imagePath)}
         />
-        <LocationPicker navigation={props.navigation} />
+        <LocationPicker
+          navigation={props.navigation}
+          location={selectedUserLocation}
+        />
         <Button
           title="save"
           color={Colors.primary}

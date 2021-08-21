@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Text,
   Button,
@@ -16,6 +16,15 @@ import Colors from "../constants/Colors";
 const LocationPicker = (props) => {
   const [userLocation, setUserLocation] = useState();
   const [isFetchingLocation, setIsFetchingLocation] = useState(false);
+
+  useEffect(() => {
+    const { location } = props;
+    const selectedLocation = location
+      ? { lat: location.latitude, lng: location.longitude }
+      : location;
+    setUserLocation(selectedLocation);
+  }, [props]);
+
   const verifyPermission = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
@@ -59,7 +68,8 @@ const LocationPicker = (props) => {
         ) : (
           <TouchableOpacity
             style={styles.map}
-            onPress={pickLocationOnMapHandler}
+            // onPress={pickLocationOnMapHandler}
+            onLongPress={pickLocationOnMapHandler}
           >
             {viewMapPreView()}
           </TouchableOpacity>

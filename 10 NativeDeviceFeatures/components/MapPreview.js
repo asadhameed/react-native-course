@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
 import MapView, { Circle, Marker } from "react-native-maps";
 
 import Colors from "../constants/Colors";
 
 const MapPreview = (props) => {
+  const initialRegion = {
+    latitude: props.location.lat,
+    longitude: props.location.lng,
+    latitudeDelta: 0.001,
+    longitudeDelta: 0.001,
+  };
+
   return (
     // <TouchableOpacity style={styles.map} onPress={props.onPress}>
     <MapView
       style={styles.map}
-      initialRegion={{
-        latitude: props.location.lat,
-        longitude: props.location.lng,
-        latitudeDelta: 0.001,
-        longitudeDelta: 0.001,
-      }}
+      initialRegion={initialRegion}
+      region={initialRegion}
     >
       {/* <Circle
         center={{
@@ -30,7 +33,7 @@ const MapPreview = (props) => {
           latitude: props.location.lat,
           longitude: props.location.lng,
         }}
-        //  pinColor={Colors.primary}
+        pinColor={Colors.primary}
       >
         {/* <View style={{ backgroundColor: "red", padding: 10 }}>
           <Text>SF</Text>

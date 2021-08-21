@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform, TouchableOpacity } from "react-native";
+import { Platform, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Ionicons } from "@expo/vector-icons";
@@ -67,11 +67,34 @@ const PlaceNavigator = () => {
         <PlaceStack.Screen
           name="MapScreen"
           component={MapScreen}
-          options={headerConfiguration("Map Screen")}
+          options={(props) => ({
+            ...headerConfiguration("Map Screen"),
+            headerRight: () => (
+              <TouchableOpacity
+                onPress={() => {
+                  props.navigation.navigate("NewPlaceScreen", {
+                    location: props.route.params.location,
+                  });
+
+                  // props.navigation.goBack();
+                }}
+              >
+                <Text style={styles.headerButtonText}>Save</Text>
+              </TouchableOpacity>
+            ),
+          })}
         />
       </PlaceStack.Navigator>
     </NavigationContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  headerButtonText: {
+    fontSize: 16,
+    color: Platform.OS === "android" ? "white" : Colors.primary,
+    marginHorizontal: 10,
+  },
+});
 
 export default PlaceNavigator;

@@ -11,17 +11,21 @@ This exercise helps to understand the concept of Native Device Features \
 
 1. Make a Header and headerRight has a button to navigate to another screen (PlacesNavigator.json)
 2. How can set a header title of screen from params dynamically (PlaceNavigation.js PlaceDetailScreen)
-3. State Management
+3. How can send route.params to otherScreen from headerRight.
+   1. First you should set Params e.x props.navigation.setParams({ location: selectedLocation }) (MapScreen.js);
+   2. Then you should navigate to other screen props.navigation.navigate("NewPlaceScreen", { location: props.route.params.location}) (PlacesNavigator.js)
+4. State Management
    1. How can make a state management use Redux, react-redux library (App.js comment section)
    2. Make the State Management on Context system (App.js)
-4. How can a Take Picture to use device camera (ImagePicker.js)
-5. How can store image from cache memory to file System (PlaceContext.js)
-6. How can create a sqlite database , create a table, insert data, select data and delete data (db.js , app.js)
-7. How can handle Promise
+5. How can a Take Picture to use device camera (ImagePicker.js)
+6. How can store image from cache memory to file System (PlaceContext.js)
+7. How can create a sqlite database , create a table, insert data, select data and delete data (db.js , app.js)
+8. How can handle Promise
    1. function().then(()=>{}).catch((err)=>console.log(err)) see in file (NewPlaceScreen.js function savePlaceHandler)
    2. try{}catch(err){} see in file (PlaceListScreen.js function getAllPlace)
-8. How can get Location from device (LocationPicker.js)
-9. MapView have different component like Circle and Marker (MapScreen.js, MapPreview.js)
+9. How can get Location from device (LocationPicker.js)
+10. MapView have different component like Circle and Marker (MapScreen.js, MapPreview.js)
+11. If you want to update the MapView then use region props (MapPreview.js)
 
 ## Main Scripts
 
