@@ -10,22 +10,23 @@ This exercise helps to understand the concept of Native Device Features \
 ## A New concept
 
 1. Make a Header and headerRight has a button to navigate to another screen (PlacesNavigator.json)
-2. How can set a header title of screen from params dynamically (PlaceNavigation.js PlaceDetailScreen)
-3. How can send route.params to otherScreen from headerRight.
+2. Make a rightHeader function that easy to modify in future (PlacesNavigator.js function: mapScreenRightHeaderHandler placeListScreenRightHandler)
+3. How can set a header title of screen from params dynamically (PlaceNavigation.js PlaceDetailScreen)
+4. How can send route.params to otherScreen from headerRight.
    1. First you should set Params e.x props.navigation.setParams({ location: selectedLocation }) (MapScreen.js);
    2. Then you should navigate to other screen props.navigation.navigate("NewPlaceScreen", { location: props.route.params.location}) (PlacesNavigator.js)
-4. State Management
+5. State Management
    1. How can make a state management use Redux, react-redux library (App.js comment section)
    2. Make the State Management on Context system (App.js)
-5. How can a Take Picture to use device camera (ImagePicker.js)
-6. How can store image from cache memory to file System (PlaceContext.js)
-7. How can create a sqlite database , create a table, insert data, select data and delete data (db.js , app.js)
-8. How can handle Promise
+6. How can a Take Picture to use device camera (ImagePicker.js)
+7. How can store image from cache memory to file System (PlaceContext.js)
+8. How can create a sqlite database , create a table, insert data, select data and delete data (db.js , app.js)
+9. How can handle Promise
    1. function().then(()=>{}).catch((err)=>console.log(err)) see in file (NewPlaceScreen.js function savePlaceHandler)
    2. try{}catch(err){} see in file (PlaceListScreen.js function getAllPlace)
-9. How can get Location from device (LocationPicker.js)
-10. MapView have different component like Circle and Marker (MapScreen.js, MapPreview.js)
-11. If you want to update the MapView then use region props and also for Marker the coordinate is also take from initialRegion (MapPreview.js)
+10. How can get Location from device (LocationPicker.js)
+11. MapView have different component like Circle and Marker (MapScreen.js, MapPreview.js)
+12. If you want to update the MapView then use region props and also for Marker the coordinate is also take from initialRegion (MapPreview.js)
 
 ## Main Scripts
 

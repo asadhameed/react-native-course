@@ -23,6 +23,37 @@ const headerConfiguration = (title) => {
   };
 };
 
+const mapScreenRightHeaderHandler = (props) => {
+  return !props.route.params.readOnly ? (
+    <TouchableOpacity
+      onPress={() => {
+        props.navigation.navigate("NewPlaceScreen", {
+          location: props.route.params.location,
+        });
+
+        // props.navigation.goBack();
+      }}
+    >
+      <Text style={styles.headerButtonText}>Save</Text>
+    </TouchableOpacity>
+  ) : null;
+};
+
+const placeListScreenRightHandler = (navigation) => {
+  return {
+    ...headerConfiguration("List Screen"),
+    headerRight: () => (
+      <TouchableOpacity onPress={() => navigation.navigate("NewPlaceScreen")}>
+        <Ionicons
+          name="add"
+          size={35}
+          color={Platform.OS === "android" ? "white" : Colors.primary}
+        />
+      </TouchableOpacity>
+    ),
+  };
+};
+
 const PlaceNavigator = () => {
   return (
     <NavigationContainer>
@@ -30,31 +61,50 @@ const PlaceNavigator = () => {
         <PlaceStack.Screen
           name="PlaceListScreen"
           component={PlaceListScreen}
+          /********************************************************
+           *  The following comment is just config Header
+           *  without headerRight
+           *******************************************************/
           //options={{...headerConfiguration("PLace List")}}
-          options={({ navigation, router }) => ({
-            ...headerConfiguration("List Screen"),
 
-            headerRight: () => (
-              <TouchableOpacity
-                onPress={() => navigation.navigate("NewPlaceScreen")}
-              >
-                <Ionicons
-                  name="add"
-                  size={35}
-                  color={Platform.OS === "android" ? "white" : Colors.primary}
-                />
-              </TouchableOpacity>
-              //   <Button
-              //     onPress={() => navigation.navigate("NewPlaceScreen")}
-              //     title="Add"
-              //   />
-            ),
-          })}
+          /********************************************************
+           *  The following comment is just config Header
+           *  with headerRight
+           *******************************************************/
+          // options={({ navigation }) => ({
+          //   ...headerConfiguration("List Screen"),
+          //   headerRight: () => (
+          //     <TouchableOpacity
+          //       onPress={() => navigation.navigate("NewPlaceScreen")}
+          //     >
+          //       <Ionicons
+          //         name="add"
+          //         size={35}
+          //         color={Platform.OS === "android" ? "white" : Colors.primary}
+          //       />
+          //     </TouchableOpacity>
+          //     //   <Button
+          //     //     onPress={() => navigation.navigate("NewPlaceScreen")}
+          //     //     title="Add"
+          //     //   />
+          //   ),
+          // })}
+
+          /***********************************************************
+           * The Upper comments code is also working. Make
+           * a placeListScreenRightHandler is easy to understand
+           *************************************************/
+
+          options={({ navigation }) => placeListScreenRightHandler(navigation)}
         />
         <PlaceStack.Screen
           name="PlaceDetailScreen"
           component={PlaceDetailScreen}
           // options={{ ...headerConfiguration("Place Detail") }}
+
+          /*******************************************************
+           *  Give title to the screen on run time
+           ******************************************************/
           options={({ route }) => ({
             ...headerConfiguration(route.params.place.title),
           })}
@@ -69,21 +119,27 @@ const PlaceNavigator = () => {
           component={MapScreen}
           options={(props) => ({
             ...headerConfiguration("Map Screen"),
-            headerRight: () => {
-              return !props.route.params.readOnly ? (
-                <TouchableOpacity
-                  onPress={() => {
-                    props.navigation.navigate("NewPlaceScreen", {
-                      location: props.route.params.location,
-                    });
+            headerRight: () => mapScreenRightHeaderHandler(props),
+            /***********************************************************
+             * The following code is also working. Make
+             * a mapScreenRightHeaderHandler is easy to understand
+             *************************************************/
 
-                    // props.navigation.goBack();
-                  }}
-                >
-                  <Text style={styles.headerButtonText}>Save</Text>
-                </TouchableOpacity>
-              ) : null;
-            },
+            // headerRight: () => {
+            //   return !props.route.params.readOnly ? (
+            //     <TouchableOpacity
+            //       onPress={() => {
+            //         props.navigation.navigate("NewPlaceScreen", {
+            //           location: props.route.params.location,
+            //         });
+
+            //         // props.navigation.goBack();
+            //       }}
+            //     >
+            //       <Text style={styles.headerButtonText}>Save</Text>
+            //     </TouchableOpacity>
+            //   ) : null;
+            // },
           })}
         />
       </PlaceStack.Navigator>
