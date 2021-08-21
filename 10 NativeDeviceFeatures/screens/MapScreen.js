@@ -31,9 +31,6 @@ const MapScreen = (props) => {
     setSelectedLocation(event.nativeEvent.coordinate);
     setIsAvailableLocation(true);
   };
-
-  //console.log(" -------MapScreen---- selectedLocation------", selectedLocation);
-
   return (
     <MapView
       style={styles.map}

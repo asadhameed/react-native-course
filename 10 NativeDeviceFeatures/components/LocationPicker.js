@@ -44,6 +44,10 @@ const LocationPicker = (props) => {
         lat: location.coords.latitude,
         lng: location.coords.longitude,
       });
+      props.onSelectedLocation({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      });
     }
     setIsFetchingLocation(false);
   };

@@ -32,10 +32,11 @@ const NewPlaceScreen = (props) => {
   const savePlaceHandler = () => {
     //  dispatch(placeAction.addPlace(title));
 
-    addPlace(title, selectedImage)
+    addPlace(title, selectedImage, selectedUserLocation)
       .then(() => props.navigation.goBack())
       .catch((err) => {
         //Alert.alert("Place isn't save ", err.toString());
+        console.log("------->NewPlaceScreen ----->err", err);
         Alert.alert("Place isn't save ", "Please try again later");
       });
   };
@@ -59,6 +60,7 @@ const NewPlaceScreen = (props) => {
         />
         <LocationPicker
           navigation={props.navigation}
+          onSelectedLocation={(location) => setSelectedUserLocation(location)}
           location={selectedUserLocation}
         />
         <Button

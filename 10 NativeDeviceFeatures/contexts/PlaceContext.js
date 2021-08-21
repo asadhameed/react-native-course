@@ -12,7 +12,10 @@ const reducer = (state, action) => {
       const newPlace = new Place(
         action.payload.id.toString(),
         action.payload.title,
-        action.payload.imageUri
+        action.payload.imageUri,
+        action.payload.address,
+        action.payload.location.latitude,
+        action.payload.location.longitude
       );
       return [...state, newPlace];
     case "SELECT_PLACE":
@@ -27,7 +30,7 @@ const reducer = (state, action) => {
 export const Provider = (props) => {
   const [state, dispatch] = useReducer(reducer, []);
 
-  const addPlace = (title, imageUri) => {
+  const addPlace = (title, imageUri, location) => {
     const promise = new Promise(async (resolve, reject) => {
       try {
         const fileName = imageUri.split("/").pop();
@@ -39,14 +42,20 @@ export const Provider = (props) => {
         const result = await insertPlace(
           title,
           newPath,
-          "Temp place",
-          13.89,
-          19.3
+          `${title} ${location.latitude} ${location.longitude}`,
+          location.latitude,
+          location.longitude
         );
         resolve();
         dispatch({
           type: "ADD_PLACE",
-          payload: { id: result.insertId, title, imageUri: newPath },
+          payload: {
+            id: result.insertId,
+            title,
+            imageUri: newPath,
+            address: `${title}, ${location.latitude}, ${location.longitude}`,
+            location,
+          },
         });
       } catch (err) {
         reject(err);
@@ -64,7 +73,9 @@ export const Provider = (props) => {
             place.id.toString(),
             place.title,
             place.imageUri,
-            place.address
+            place.address,
+            place.lat,
+            place.lng
           )
       );
       dispatch({ type: "SELECT_PLACE", payload: places });
