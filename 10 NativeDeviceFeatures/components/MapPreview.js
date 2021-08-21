@@ -6,8 +6,8 @@ import Colors from "../constants/Colors";
 
 const MapPreview = (props) => {
   const initialRegion = {
-    latitude: props.location.lat,
-    longitude: props.location.lng,
+    latitude: props.location.latitude,
+    longitude: props.location.longitude,
     latitudeDelta: 0.001,
     longitudeDelta: 0.001,
   };
@@ -30,8 +30,8 @@ const MapPreview = (props) => {
       /> */}
       <Marker
         coordinate={{
-          latitude: props.location.lat,
-          longitude: props.location.lng,
+          latitude: props.location.longitude,
+          longitude: props.location.longitude,
         }}
         pinColor={Colors.primary}
       >

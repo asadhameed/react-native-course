@@ -11,7 +11,7 @@ const MapScreen = (props) => {
   );
   const [selectedLocation, setSelectedLocation] = useState(
     location
-      ? { latitude: location.lat, longitude: location.lng }
+      ? { latitude: location.latitude, longitude: location.longitude }
       : { latitude: 33.97271663348013, longitude: 71.4385470028896 }
   );
 

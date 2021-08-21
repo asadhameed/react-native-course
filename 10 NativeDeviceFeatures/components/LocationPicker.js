@@ -20,7 +20,7 @@ const LocationPicker = (props) => {
   useEffect(() => {
     const { location } = props;
     const selectedLocation = location
-      ? { lat: location.latitude, lng: location.longitude }
+      ? { latitude: location.latitude, longitude: location.longitude }
       : location;
     setUserLocation(selectedLocation);
   }, [props]);
@@ -41,8 +41,8 @@ const LocationPicker = (props) => {
       });
 
       setUserLocation({
-        lat: location.coords.latitude,
-        lng: location.coords.longitude,
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
       });
       props.onSelectedLocation({
         latitude: location.coords.latitude,
