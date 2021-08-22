@@ -5,6 +5,7 @@ This exercise helps to understand the concept following concepts
 - 1. Using Outside API's (src/Api/yelp.js and useResult.js file)
 - 2. Making Hooks Reusable (useResult.js used hooks, ResultDetails.js and ResultList.js reusable components)
 - 3. Navigation with Parameters (ResultList.js file used useNavigation for navigation with parameters)
+- 5.  Screen prop reference of navigation and route (ResultShowScreen.js)
 - 4. Keep your own key from yelp.com in 'src/api/yelp.js
 
 ## Available Scripts

@@ -12,9 +12,8 @@ Expo Screen orientation is also nice api.
    2. Apple device gives the better result on position value
    3. Android device gives the better result on padding value
 3. If you are using the ScreenOrientation.lockAsync so the screen will not change the orientation and the screen will locked (GameScreen.js)
-   1. If you use the ScreenOrientation.lockAsync so this will lock other screen as well. If you want that the other screen should have default orientation
-      then you should use ScreenOrientation.unlockAsync(ScreenOrientation.OrientationLock.DEFAULT) (StartGameScreen.js)
-4. Listening to Orientation Changes: The component style is assign when the component render but after change the Orientation the component is not render so the component have the same value. To change the style we need useState and updateLayout function (StartGameScreen.js)
+   1. If you use the ScreenOrientation.lockAsync so this will lock other screen as well. If you want that the other screen should have default orientation then you should use ScreenOrientation.unlockAsync(ScreenOrientation.OrientationLock.DEFAULT) (StartGameScreen.js)
+4. Listening to Orientation Changes: The component style is assign when the component render but after change the Orientation the component is not render, so the component have the same value. To change the style we need useState and updateLayout function (StartGameScreen.js)
    1. Dimensions.addEventListener("change", updateLayout) when the Orientation change the new addEventListener add it. Better approach to use useEffect .
 5. you can use Dimensions properties from react-native (StartGameScreen.js)
 6. Change the margin value some decision base e.x marginTop: Dimensions.get("window").height > 600 ? 20 : 5 (GameScreen.js)

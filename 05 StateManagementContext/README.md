@@ -3,8 +3,10 @@
 This exercise helps to understand the following concept
 
 - 1. Screen Options (App.js)
+- 2. Screen prop reference navigation and route (ShowScreen.js) [Navigation props detail](https://reactnavigation.org/docs/navigation-prop/)
 - 2. Navigation.setOptions (ShowScreen.js ,IndexSearch.js )
-- 3. useReducer ( createContextData.j and BlogContext.js)
+- 3. Make a reusable hook (createContextData.js)
+- 3. useReducer ( createContextData.js and BlogContext.js)
 - 4. Make Components (EditBlogScreen.js , CreateBlogScreen.js and BlogPostForm.js)
 
 ## Available Scripts

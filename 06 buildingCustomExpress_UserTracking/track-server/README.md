@@ -1,7 +1,7 @@
 # Building a Custom Express API
 
-- 1. Connect with mongod
-- 2. create the different router authRoutes and trackRoutes
+- 1. Connect with mongodb
+- 2. Create the different router authRoutes and trackRoutes
 - 3. Create different End Points.
 
 ## Available Scripts
