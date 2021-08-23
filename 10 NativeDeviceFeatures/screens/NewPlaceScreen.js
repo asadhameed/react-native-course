@@ -138,13 +138,30 @@ const NewPlaceScreen = (props) => {
     state: { location },
   } = useContext(MapContext);
 
+  const isValidateData = () => {
+    if (!title) {
+      Alert.alert("Please, Enter title of the place");
+      return false;
+    }
+    if (!selectedImage) {
+      Alert.alert("Please, Select a image of the place");
+      return false;
+    }
+    if (!location) {
+      Alert.alert("Please, Select Location of the place");
+      return false;
+    }
+
+    return true;
+  };
   const savePlaceHandler = () => {
-    addPlace(title, selectedImage, location)
-      .then(() => props.navigation.goBack())
-      .catch((err) => {
-        console.log("------->NewPlaceScreen ----->err", err);
-        Alert.alert("Place isn't save ", "Please try again later");
-      });
+    if (isValidateData())
+      addPlace(title, selectedImage, location)
+        .then(() => props.navigation.goBack())
+        .catch((err) => {
+          console.log("------->NewPlaceScreen ----->err", err);
+          Alert.alert("Place isn't save ", "Please try again later");
+        });
   };
 
   // useEffect(() => {

@@ -120,6 +120,7 @@
 8. Get Location from device and Get LocationPermission from user
 9. MapView have different component like Circle and Marker
 10. Use Context system in application make easy to access data components and screen
+11. Validation of Data
 
 #### Main Concept
 

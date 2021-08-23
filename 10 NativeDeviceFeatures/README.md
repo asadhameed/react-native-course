@@ -29,6 +29,7 @@ This exercise helps to understand the concept of Native Device Features \
 11. MapView have different component like Circle and Marker (MapScreen.js, MapPreview.js)
 12. If you want to update the MapView then use region props and also for Marker the coordinate is also take from initialRegion (MapPreview.js)
 13. Create MapContext which make application easy (App.js, LocationPicker.js, MapScreen.js, NewPlaceScreen.js, PlaceDetailScreen.js, PlacesNavigator.js and MapContext). Before the every components save location and send that location as params. Now location is save in MapContext so all components and screen can easily access the location.
+14. Validation of Data (NewPlaceScreen.js)
 
 ## Main Scripts
 
