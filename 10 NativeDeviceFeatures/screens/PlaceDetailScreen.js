@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   ScrollView,
   Image,
@@ -10,6 +10,7 @@ import {
 
 import MapPreview from "../components/MapPreview";
 import Colors from "../constants/Colors";
+import { MapContext } from "../contexts/MapContext";
 
 const PlaceDetailScreen = (props) => {
   /******************************************
@@ -20,9 +21,19 @@ const PlaceDetailScreen = (props) => {
   //const place = props.route.params;
 
   const { place } = props.route.params;
+  const { updateLocation } = useContext(MapContext);
   const location = { latitude: place.latitude, longitude: place.longitude };
+
   const pickLocationOnMapHandler = () => {
-    props.navigation.navigate("MapScreen", { location, readOnly: true });
+    /*****************************************************
+     *  Don't need send the location in params
+     *  Because MapScreen will take location from MapContext
+     *  Before navigate to MapScreen need to update location
+     ******************************************************/
+    //   props.navigation.navigate("MapScreen", { location, readOnly: true });
+
+    updateLocation(location);
+    props.navigation.navigate("MapScreen", { readOnly: true });
   };
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>

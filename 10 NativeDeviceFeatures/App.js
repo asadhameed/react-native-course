@@ -31,6 +31,7 @@ import React from "react";
 
 import PlaceNavigator from "./navigation/PlacesNavigator";
 import { Provider } from "./contexts/PlaceContext";
+import { MapProvider } from "./contexts/MapContext";
 
 import { createDataBase } from "./helpers/db";
 
@@ -41,7 +42,9 @@ createDataBase()
 export default function App() {
   return (
     <Provider>
-      <PlaceNavigator />
+      <MapProvider>
+        <PlaceNavigator />
+      </MapProvider>
     </Provider>
   );
 }

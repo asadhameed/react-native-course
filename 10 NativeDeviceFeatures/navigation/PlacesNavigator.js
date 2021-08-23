@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Platform, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -9,6 +9,7 @@ import NewPlaceScreen from "../screens/NewPlaceScreen";
 import PlaceDetailScreen from "../screens/PlaceDetailScreen";
 import PlaceListScreen from "../screens/PlaceListScreen";
 import Colors from "../constants/Colors";
+import { MapContext } from "../contexts/MapContext";
 
 const PlaceStack = createStackNavigator();
 
@@ -27,11 +28,18 @@ const mapScreenRightHeaderHandler = (props) => {
   return !props.route.params.readOnly ? (
     <TouchableOpacity
       onPress={() => {
-        props.navigation.navigate("NewPlaceScreen", {
-          location: props.route.params.location,
-        });
+        /***********************************************
+         * Don't need send params to NewPlace Screen Because location save in MapContext
+         * So NewPlaceScreen take location from MapContext
+         *
+         ****************************************/
+        // props.navigation.navigate("NewPlaceScreen", {
+        //   location: props.route.params.location,
+        // });
 
-        // props.navigation.goBack();
+        props.navigation.goBack();
+        //// OR
+        //props.navigation.navigate("NewPlaceScreen");
       }}
     >
       <Text style={styles.headerButtonText}>Save</Text>
@@ -39,11 +47,16 @@ const mapScreenRightHeaderHandler = (props) => {
   ) : null;
 };
 
-const placeListScreenRightHandler = (navigation) => {
+const placeListScreenRightHandler = (navigation, clearLocation) => {
   return {
     ...headerConfiguration("List Screen"),
     headerRight: () => (
-      <TouchableOpacity onPress={() => navigation.navigate("NewPlaceScreen")}>
+      <TouchableOpacity
+        onPress={() => {
+          clearLocation(); // When user can click on new Place Screen then clear location
+          navigation.navigate("NewPlaceScreen");
+        }}
+      >
         <Ionicons
           name="add"
           size={35}
@@ -55,6 +68,7 @@ const placeListScreenRightHandler = (navigation) => {
 };
 
 const PlaceNavigator = () => {
+  const { clearLocation } = useContext(MapContext);
   return (
     <NavigationContainer>
       <PlaceStack.Navigator initialRouteName="PlaceListScreen">
@@ -95,7 +109,9 @@ const PlaceNavigator = () => {
            * a placeListScreenRightHandler is easy to understand
            *************************************************/
 
-          options={({ navigation }) => placeListScreenRightHandler(navigation)}
+          options={({ navigation }) =>
+            placeListScreenRightHandler(navigation, clearLocation)
+          }
         />
         <PlaceStack.Screen
           name="PlaceDetailScreen"

@@ -9,21 +9,21 @@
 - Responsive AdaptiveUser Interfaces
 - Native Device Features (SQLite, Camera and User Location)
 
-[00 flatList](https://github.com/asadhameed/react-native-course/tree/main/00%20flatList) \
+[00 flatList](https://github.com/asadhameed/react-native-course/tree/main/00%20flatList)
 
 1. Flat list
 2. Components
 3. NavigationContainer
 4. CreateStackNavigator
 
-[01 navigationBetweenScreen](https://github.com/asadhameed/react-native-course/tree/main/01%20navigationBetweenScreen) \
+[01 navigationBetweenScreen](https://github.com/asadhameed/react-native-course/tree/main/01%20navigationBetweenScreen)
 
 1. NavigationContainer
 2. CreateStackNavigator
 3. Navigating Users Between Screens
 4. TouchableOpacity and Button concept
 
-[02 componentsReusable](https://github.com/asadhameed/react-native-course/tree/main/02%20componentsReusable) \
+[02 componentsReusable](https://github.com/asadhameed/react-native-course/tree/main/02%20componentsReusable)
 
 1. NavigationContainer
 2. CreateStackNavigator
@@ -31,13 +31,13 @@
 4. Screen prop reference (navigation, route) [Navigation props detail](https://reactnavigation.org/docs/navigation-prop/)
 5. Image on screen, Pass a value to the component on props method
 
-[03 stateManagement](https://github.com/asadhameed/react-native-course/tree/main/03%20stateManagement) \
+[03 stateManagement](https://github.com/asadhameed/react-native-course/tree/main/03%20stateManagement)
 
 1. Hooks (useState ,useReducer) [Hooks API Reference](https://reactjs.org/docs/hooks-reference.html)
 2. State Managements (useReducer)
 3. ReactNative component (View, StyleSheet, Text, TextInput)
 
-[04 RestaurantSearchApp](https://github.com/asadhameed/react-native-course/tree/main/04%20RestaurantSearchApp) \
+[04 RestaurantSearchApp](https://github.com/asadhameed/react-native-course/tree/main/04%20RestaurantSearchApp)
 
 1. Using Outside API
 2. Hooks (useState, useEffect) [Hooks API Reference](https://reactjs.org/docs/hooks-reference.html)
@@ -47,7 +47,7 @@
 6. Screen prop reference (navigation, route) [Navigation props detail](https://reactnavigation.org/docs/navigation-prop/)
 7. Navigation with Parameters
 
-[05 StateManagementContext](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext) \
+[05 StateManagementContext](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext)
 
 1. Screen Options
 2. Screen prop reference (navigation, route) [Navigation props detail](https://reactnavigation.org/docs/navigation-prop/)
@@ -56,13 +56,13 @@
 5. State Managements (useReducer)
 6. Advanced State Management with Context System.
 
-[05 StateManagementContext-jsonserver](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext-jsonserver) \
+[05 StateManagementContext-jsonserver](https://github.com/asadhameed/react-native-course/tree/main/05%20StateManagementContext-jsonserver)
 
 1.  Same as '05 StateManagementContext'
 2.  Using Outside API
 3.  Client and Server.
 
-[06 buildingCustomExpress_UserTracking](https://github.com/asadhameed/react-native-course/tree/main/06%20buildingCustomExpress_UserTracking) \
+[06 buildingCustomExpress_UserTracking](https://github.com/asadhameed/react-native-course/tree/main/06%20buildingCustomExpress_UserTracking)
 
 1. Client and Server
 2. CreateBottomTabNavigator, createStackNavigator and Switch
@@ -79,7 +79,7 @@
 13. MongoDB Modals (server)
 14. Create the different router
 
-[07 Diving into the Basics](https://github.com/asadhameed/react-native-course/tree/main/07%20Diving%20into%20the%20Basics) \
+[07 Diving into the Basics](https://github.com/asadhameed/react-native-course/tree/main/07%20Diving%20into%20the%20Basics)
 
 1.  React Native (StyleSheet, View, FlatList, Button, Modal, TouchableOpacity etc)
 2.  Flex Concept
@@ -108,7 +108,7 @@
 8. TouchableOpacity and TouchableNativeFeedback
 9. SafeAreaView API react native
 
-[10 NativeDeviceFeatures](https://github.com/asadhameed/react-native-course/tree/main/10%20NativeDeviceFeatures) \
+[10 NativeDeviceFeatures](https://github.com/asadhameed/react-native-course/tree/main/10%20NativeDeviceFeatures)
 
 1. Configuration of header in Navigator
 2. Set Params
@@ -119,6 +119,7 @@
 7. Handle Promise
 8. Get Location from device and Get LocationPermission from user
 9. MapView have different component like Circle and Marker
+10. Use Context system in application make easy to access data components and screen
 
 #### Main Concept
 
