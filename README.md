@@ -122,6 +122,14 @@
 10. Use Context system in application make easy to access data components and screen
 11. Validation of Data
 
+[11 NavigationWithReact](https://github.com/asadhameed/react-native-course/tree/main/11%20NavigationWithReact)
+
+1. Stack Navigator
+2. Tab Navigator
+3. Drawer Navigator
+4. Own Font
+5. Use Redux
+
 #### Main Concept
 
 1. [Function.bind read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
