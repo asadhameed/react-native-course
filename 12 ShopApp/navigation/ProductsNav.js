@@ -1,10 +1,10 @@
 import React from "react";
-import { NavigationContainer , DrawerActions } from "@react-navigation/native";
+import { NavigationContainer, DrawerActions } from "@react-navigation/native";
 import { Platform, TouchableNativeFeedback } from "react-native";
-import { createNativeStackNavigator  } from "@react-navigation/native-stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import { Ionicons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
 import ProductsOverViewScreen from "../screens/shop/ProductsOverviewScreen";
 import ProductDetailScreen from "../screens/shop/ProductsDetailsScreen";
@@ -24,34 +24,31 @@ const headerConfig = {
     backgroundColor: Platform.OS === "android" ? Colors.primary : "",
   },
   headerTitleAlign: "center",
-  
 };
 
 const Home = () => {
   return (
     <Stack.Navigator
-      screenOptions={({ navigation })=>({
+      screenOptions={({ navigation }) => ({
         ...headerConfig,
-        headerLeft: () => ( 
-          
-            <TouchableNativeFeedback onPress={()=>{
-              console.log(DrawerActions)
-              navigation.dispatch(DrawerActions.toggleDrawer())
-              }}>
-              <Ionicons
-                name={ "cart"}
-                size={25}
-              />
-            </TouchableNativeFeedback>
-          
-        ),
-        
         title: "All Product",
       })}
     >
       <Stack.Screen
         name="productsOverView"
         component={ProductsOverViewScreen}
+        options={({ navigation }) => ({
+          headerLeft: () => (
+            <TouchableNativeFeedback
+              onPress={() => {
+                console.log(DrawerActions);
+                navigation.dispatch(DrawerActions.toggleDrawer());
+              }}
+            >
+              <Entypo name="menu" size={24} color="white" />
+            </TouchableNativeFeedback>
+          ),
+        })}
       />
       <Stack.Screen
         name="productDetailScreen"
@@ -64,23 +61,30 @@ const Home = () => {
           title: "Cart",
         }}
       />
-     
     </Stack.Navigator>
   );
 };
 
-const DrawerNavigation =()=>{
-  return <Drawer.Navigator screenOptions={{...headerConfig,headerShown:false}} initialRouteName="Home">
-  <Drawer.Screen  name="Home" component={Home} />
-  <Drawer.Screen name="Order" component={OrderScreen} />
-</Drawer.Navigator>
-}
+const DrawerNavigation = () => {
+  return (
+    <Drawer.Navigator
+      screenOptions={{ ...headerConfig, headerShown: false }}
+      initialRouteName="Home"
+    >
+      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen
+        name="Order"
+        component={OrderScreen}
+        options={{ ...headerConfig, headerShown: true }}
+      />
+    </Drawer.Navigator>
+  );
+};
 
 const ProductsNav = () => {
   return (
     <NavigationContainer>
       <DrawerNavigation />
-      
     </NavigationContainer>
   );
 };
